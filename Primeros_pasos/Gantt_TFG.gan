@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-09-18" view-index="0" gantt-divider-location="355" resource-divider-location="300" version="2.8.11" locale="es_ES">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-09-18" view-index="0" gantt-divider-location="355" resource-divider-location="300" version="2.8.11" locale="es">
     <description/>
     <view zooming-state="default:5" id="gantt-chart">
         <field id="tpd3" name="Nombre" width="211" order="0"/>
@@ -87,7 +87,7 @@
             <depend id="40" type="2" difference="0" hardness="Strong"/>
             <depend id="41" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="40" name="Implantacion" color="#8cb6ce" meeting="false" start="2023-11-15" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
+        <task id="40" name="Implantación" color="#8cb6ce" meeting="false" start="2023-11-15" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
         <task id="41" name="Documentracion" color="#8cb6ce" meeting="false" start="2023-11-15" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources/>
