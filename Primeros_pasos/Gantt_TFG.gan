@@ -35,6 +35,9 @@
         <date year="2023" month="11" date="4" type="WORKING_DAY"><![CDATA[Excepción de fin de semana]]></date>
         <date year="2023" month="10" date="28" type="WORKING_DAY"><![CDATA[Excepción de fin de semana]]></date>
         <date year="2023" month="11" date="18" type="WORKING_DAY"><![CDATA[Excepción de fin de semana]]></date>
+        <date year="2023" month="10" date="14" type="WORKING_DAY"><![CDATA[Excepción de fin de semana]]></date>
+        <date year="2023" month="11" date="12" type="WORKING_DAY"><![CDATA[Excepción de fin de semana]]></date>
+        <date year="2023" month="10" date="7" type="WORKING_DAY"><![CDATA[Excepción de fin de semana]]></date>
     </calendars>
     <tasks empty-milestones="true">
         <taskproperties>
@@ -66,27 +69,26 @@
         </task>
         <task id="35" name="Desarrollo" color="#8cb6ce" meeting="false" start="2023-09-26" duration="42" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true">
             <depend id="39" type="2" difference="0" hardness="Strong"/>
-            <task id="51" name="Desarrollo de la pagina base" color="#8cb6ce" meeting="false" start="2023-09-26" duration="4" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
-            <task id="52" name="Sistemas de Usuario" color="#8cb6ce" meeting="false" start="2023-09-30" duration="4" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true">
+            <task id="51" name="Desarrollo de la pagina base" color="#8cb6ce" meeting="false" start="2023-09-26" duration="7" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
+            <task id="52" name="Sistemas de Usuario" color="#8cb6ce" meeting="false" start="2023-10-03" duration="4" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true">
                 <depend id="58" type="2" difference="0" hardness="Strong"/>
                 <depend id="95" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="58" name="Foro" color="#8cb6ce" meeting="false" start="2023-10-04" duration="2" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
-            <task id="53" name="Sistemas de Administrador" color="#8cb6ce" meeting="false" start="2023-10-06" duration="4" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true">
+            <task id="58" name="Foro" color="#8cb6ce" meeting="false" start="2023-10-07" duration="2" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
+            <task id="53" name="Sistemas de Administrador" color="#8cb6ce" meeting="false" start="2023-10-09" duration="5" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true">
                 <depend id="95" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="95" name="Chat" color="#8cb6ce" meeting="false" start="2023-10-11" duration="4" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
-            <task id="105" name="Creacion Personaje" color="#8cb6ce" meeting="false" start="2023-10-16" duration="5" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
-            <task id="54" name="Diseño y desarrollo Otome" color="#8cb6ce" meeting="false" start="2023-10-21" duration="7" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
-            <task id="55" name="Diseño y desarrollo del mapeo" color="#8cb6ce" meeting="false" start="2023-10-28" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
-            <task id="56" name="Minijuego(s)" color="#8cb6ce" meeting="false" start="2023-11-03" duration="7" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
+            <task id="95" name="Mensaje Usuario &gt; Administrador" color="#8cb6ce" meeting="false" start="2023-10-14" duration="3" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
+            <task id="54" name="Diseño y desarrollo Otome" color="#8cb6ce" meeting="false" start="2023-10-17" duration="7" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
+            <task id="55" name="Diseño y desarrollo del mapeo" color="#8cb6ce" meeting="false" start="2023-10-24" duration="7" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
+            <task id="56" name="Minijuego(s)" color="#8cb6ce" meeting="false" start="2023-11-01" duration="7" complete="0" thirdDate="2023-09-26" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="39" name="Pruebas" color="#8cb6ce" meeting="false" start="2023-11-10" duration="7" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true">
+        <task id="39" name="Pruebas" color="#8cb6ce" meeting="false" start="2023-11-08" duration="7" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true">
             <depend id="40" type="2" difference="0" hardness="Strong"/>
             <depend id="41" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="40" name="Implantacion" color="#8cb6ce" meeting="false" start="2023-11-18" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
-        <task id="41" name="Documentracion" color="#8cb6ce" meeting="false" start="2023-11-18" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
+        <task id="40" name="Implantacion" color="#8cb6ce" meeting="false" start="2023-11-15" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
+        <task id="41" name="Documentracion" color="#8cb6ce" meeting="false" start="2023-11-15" duration="5" complete="0" thirdDate="2023-09-18" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
