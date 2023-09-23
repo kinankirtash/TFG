@@ -1,12 +1,12 @@
-drop database if exists rolleaf;
+drop database if exists rollife;
 drop user if exists moonChild;
 -- por fallo de usuario existente
 
-create database rolleaf;
-use rolleaf;
+create database rollife;
+use rollife;
 
 create user 'moonChild' identified by 'moonChild';
-grant all privileges on rolleaf.*to desarrollador;
+grant all privileges on rollife.*to desarrollador;
 
 
 create table if not exists usuario (
