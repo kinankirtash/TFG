@@ -13,3 +13,12 @@
  *
  * @see: https://codeigniter.com/user_guide/extending/common.html
  */
+
+function template(string $view, array $data = [])
+{
+    if (! file_exists(__DIR__.'/Views/'.$view.'.php')) {
+        return "La pagina que buscas no existe";
+    }
+
+    return view('header', $data).view($view).view('footer');
+}

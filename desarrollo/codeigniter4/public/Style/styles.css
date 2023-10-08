@@ -1,14 +1,75 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+@font-face {
+    font-family: Kaushan_Script;
+    src: url("../assets/tipografias/Kaushan_Script/KaushanScript-Regular.ttf");
 }
 
+@font-face {
+    font-family: Lato;
+    src: url("../assets/tipografias/Lato/Lato-Regular.ttf");
+}
+
+:root {
+    --pr-pink: #FFCDCD;
+    --pr-blue: #CDFFFF;
+    --sc-pink: #DF93BA;
+    --sc-blue: #9AFFCB;
+    --cc-pink: #EFC3C3;
+    --cc-blue1: #C3EFEF;
+    --cc-blue2: #BADFDF;
+    --cc-blue3: #B0CFCF;
+    --white: #fafafa;
+    --black: #23221E;
+    --grey1: #C7C7C7;
+    --bl-to-pk: linear-gradient(to right, #CDFFFF, #FFCDCD);
+    --trasnparent-White: rgba(242, 246, 228, .4);
+    --bl-to-pk-top: linear-gradient(#FFCDCD, #CDFFFF, #FFCDCD);
+
+}
+
+/* Reset */
+html, nav, iframe, input, hr, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, a:hover, a:visited, button, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: transparent;
+}
+
+/*Modo de scroll*/
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-family: Kaushan_Script;
+}
+
+body {
+    font-family: Lato;
+    margin-top: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: var(--bl-to-pk-top);
+    background-position: center bottom;
+    background-size: 100% auto;
+}
+
+.fondo_blanco {
+    position: absolute;
+    width: 100%;
+    height: 87.5vh;
+    background: var(--white);
+}
+
+/*MENU HEADER*/
 header {
-    background-color: #333;
-    color: #fff;
+    color: var(--grey1);
     padding: 10px 0;
     position: relative;
+    z-index: 1;
 }
 
 .navbar {
@@ -18,10 +79,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.logo {
-    font-size: 24px;
 }
 
 .menu {
@@ -35,14 +92,11 @@ header {
     margin-right: 20px;
 }
 
-.menu a {
-    text-decoration: none;
-    color: #fff;
+.menu input {
+    color: var(--grey1);
+    font-weight: bold;
+    font-size: 25px;
     transition: color 0.3s;
-}
-
-.menu a:hover {
-    color: #ff6600;
 }
 
 .menu-icon {
@@ -54,17 +108,380 @@ header {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--pr-pink);
     margin: 3px 0;
 }
 
+.menu input:hover {
+    color: var(--sc-pink);
+    cursor: pointer;
+}
+
+/* MARCA */
+.marca {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+}
+
+.logo {
+    height: 5em;
+    display: inline-block;
+    position: relative;
+}
+
+.rolleaf {
+    font-size: 40px;
+    top: -20px;
+    display: inline-block;
+    position: relative;
+    background: var(--bl-to-pk);
+    -webkit-background-clip: text; /* Para navegadores basados en WebKit */
+    color: transparent; /* Oculta el color original del texto */
+}
+
+.marca:hover {
+    cursor: pointer;
+}
+
+/*Wiki opciones*/
+
+.section {
+    width: 100%;
+}
+
+.grid_menus {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+}
+
+.wiki {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.wikiOption {
+    display: block;
+    border: solid var(--black) 2px;
+    color: var(--grey1);
+    font-size: 200%;
+    height: 16.5vh;
+    position: relative;
+    text-align: center;
+    padding-top: 12vh;
+}
+
+.Pretendientes {
+    background: linear-gradient(320deg, transparent, var(--white)), url("../assets/imagenes/fondos/corazones.png");
+    background-size: contain;
+    background-position: center;
+}
+
+.Personajes {
+    background: linear-gradient(90deg, transparent, var(--white)), url("../assets/imagenes/fondos/gatos.jpg");
+    background-size: contain;
+    background-position: center;
+}
+
+.Lugares {
+    background: linear-gradient(320deg, transparent, var(--white)), url("../assets/imagenes/fondos/ciudad-silueta.png");
+    background-size: contain;
+    background-position: bottom;
+}
+
+.wikiOption:hover {
+    color: var(--sc-blue);
+    font-size: 250%;
+    text-shadow: 5px 0 5px var(--black);
+    cursor: pointer;
+}
+
+.Lugares:hover {
+    background-image: url("../assets/imagenes/fondos/ciudad-silueta.png");
+}
+
+.Personajes:hover {
+    background-image: url("../assets/imagenes/fondos/gatos.jpg");
+}
+
+.Pretendientes:hover {
+    background-image: url("../assets/imagenes/fondos/corazones.png");
+}
+
+.titulo_pagina {
+    text-align: center;
+    color: var(--pr-pink);
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 50px 0 15px 0;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--trasnparent-White);
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 2px solid var(--pr-blue);
+    border-radius: 5px;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.formulario_sesion {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    z-index: 4;
+}
+
+.formulario {
+    font-family: Lato;
+    background: var(--white);
+    padding: 20px;
+    margin: 2px;
+    border: solid var(--pr-pink) 3px;
+    border-radius: 15px;
+    color: var(--black);
+    width: 50%;
+}
+
+.enviar {
+    font-family: Lato;
+    background-color: var(--cc-blue1);
+    border: solid var(--sc-pink) 2px;
+    border-radius: 5px;
+    padding: 15px;
+    width: 25%;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    padding: 16px;
+}
+
+.logoDeco {
+    position: absolute;
+    z-index: 1;
+    width: 15%;
+    left: 5%;
+    top: 20%;
+}
+
+@media (min-width: 769px) {
+    header {
+        background-color: var(--white);
+    }
+
+    /* Estilos para la línea de separación */
+    .separator {
+        border: none;
+        height: 5px;
+        background-color: var(--grey1);
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    /*FONDO*/
+    .recibidor {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 33.33%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .background-image:nth-child(1) {
+        background-image: url('../assets/imagenes/fondos/diseno-paisaje-pop-brillante.jpg');
+        left: 0;
+    }
+
+    .background-image:nth-child(2) {
+        background-image: url('../assets/imagenes/fondos/fondo_parque.png');
+        left: 33.2%;
+        border-left: 5px solid var(--pr-pink);
+    }
+
+    .background-image:nth-child(3) {
+        background-image: url('../assets/imagenes/fondos/pagoda-yasaka-sannen-zaka-street-kyoto-japon.jpg');
+        left: 66.33%;
+        border-left: 5px solid var(--pr-pink);
+    }
+
+    /*Siluetas*/
+    .siluetas {
+        display: grid;
+        grid-template-columns: repeat(5, 20%);
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .silueta1, .silueta2, .silueta3, .silueta4, .silueta5 {
+        position: relative;
+    }
+
+    .silueta1, .silueta5 {
+        width: 150%;
+        opacity: 40%;
+        top: 25%;
+        z-index: 3;
+    }
+
+    .silueta2, .silueta4 {
+        width: 80%;
+        opacity: 60%;
+        z-index: 4;
+    }
+
+    .silueta1 {
+        left: 50%;
+    }
+
+    .silueta2 {
+        left: 18%;
+    }
+
+    .silueta3 {
+        top: 3%;
+        opacity: 80%;
+        width: 150%;
+        z-index: 5;
+    }
+
+    .silueta4 {
+        right: 10%;
+    }
+
+    .silueta5 {
+        right: 37%;
+    }
+
+    .silueta1:hover,
+    .silueta2:hover,
+    .silueta3:hover,
+    .silueta4:hover,
+    .silueta5:hover {
+        opacity: 100%;
+    }
+
+    /*FLECHA*/
+    .flecha {
+        width: 5em;
+        z-index: 499;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .flecha:hover {
+        width: 10%;
+        bottom: 8%;
+        cursor: pointer;
+    }
+
+    .flecha:active {
+        width: 5em;
+        bottom: 10%;
+    }
+
+    /*CONTENIDO*/
+    #bottom {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .contenido {
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        top: 10%;
+    }
+
+    .tituloInfo {
+        opacity: 0.6;
+        position: relative;
+        left: 9%;
+        width: 82%;
+        height: 10%;
+        background-position: center center;
+        background-size: 100% 100%;
+    }
+
+    .titulo {
+        color: var(--pr-pink);
+        font-family: Kaushan_Script;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-bottom: 50px;
+        display: inline-block;
+    }
+
+    .subir {
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        z-index: 499;
+        top: 7%;
+    }
+
+    .subir:hover {
+        text-shadow: 5px 0 8px var(--black);
+    }
+
+    .Info {
+        background-color: var(--trasnparent-White);
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        justify-items: center;
+        width: 76%;
+        padding: 3%;
+        color: var(--black);
+        text-align: justify;
+        font-size: 2vw;
+    }
+
+    .Info:hover {
+        background-color: var(--white);
+
+    }
+
+    .formulario_sesion {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enviar {
+        position: absolute;
+        margin-top: 25vh;
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        background-color: transparent;
+    }
+
     .menu {
         display: none;
         flex-direction: column;
         background-color: #333;
         position: absolute;
-        top: 60px;
+        top: 106px;
         right: 0;
         width: 100%;
         text-align: center;
@@ -80,5 +497,18 @@ header {
 
     .menu-icon {
         display: flex;
+    }
+
+    .separator, .flecha, .siluetas {
+        display: none;
+    }
+
+    .enviar {
+        position: relative;
+        margin-top: 2vh;
+    }
+
+    .logoDeco {
+        width: 25%;
     }
 }
