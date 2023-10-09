@@ -18,4 +18,9 @@ class Users extends BaseController
     {
         return template('signUp');
     }
+
+    public function perfil()
+    {
+        return template('perfil');
+    }
 }

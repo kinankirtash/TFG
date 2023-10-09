@@ -1,9 +1,9 @@
 <main>
-	<div class="contenido3">
-		<div class="titulo tituloFormulario">PRETENDIENTES</div>
+	<div class="fondo_blanco">
+		<div class="titulo_pagina">PRETENDIENTES</div>
 		<div class="tituloInfoForm"></div>
-		<form style="margin: 1% 0 1% 5%;" method="get" action="http://localhost/">
-			<input class="boton" name="menus" type="submit" value="VOLVER">
+		<form method="get" action="http://localhost/wiki">
+			<input class="boton back_boton" name="menus" type="submit" value="VOLVER">
 		</form>
 		<!-- Mostrar los pretendientes -->
 		<table class='lista'>
