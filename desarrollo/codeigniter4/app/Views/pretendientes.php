@@ -2,9 +2,11 @@
 	<div class="fondo_blanco">
 		<div class="titulo_pagina">PRETENDIENTES</div>
 		<div class="tituloInfoForm"></div>
+
 		<form method="get" action="http://localhost/wiki">
-			<input class="boton back_boton" name="menus" type="submit" value="VOLVER">
+			<input class="back_boton" name="menus" type="submit" value="VOLVER">
 		</form>
+
 		<!-- Mostrar los pretendientes -->
 		<table class='lista'>
 

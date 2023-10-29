@@ -6,7 +6,7 @@ class WikiController extends BaseController
 {
     public function __construct()
     {
-        $db = \Config\Database::connect();
+        //$db = \Config\Database::connect();
         //$data['User'] = $this->session->userdata('User');
     }
 

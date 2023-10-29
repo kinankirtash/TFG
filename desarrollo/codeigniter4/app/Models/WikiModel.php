@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class wiki_model extends Model
+class WikiModel extends Model
 {
     public function numPaginas()
     {

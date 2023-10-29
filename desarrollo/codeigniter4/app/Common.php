@@ -22,3 +22,13 @@ function template(string $view, array $data = [])
 
     return view('header', $data).view($view).view('footer');
 }
+
+function prearray($array, $stopProcess = false)
+{
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+    if ($stopProcess) {
+        exit;
+    }
+}

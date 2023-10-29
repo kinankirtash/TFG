@@ -11,6 +11,7 @@
 :root {
     --pr-pink: #FFCDCD;
     --pr-blue: #CDFFFF;
+    --tr-blue: rgba(205, 255, 255, 0.75);
     --sc-pink: #DF93BA;
     --sc-blue: #9AFFCB;
     --cc-pink: #EFC3C3;
@@ -60,7 +61,7 @@ body {
 .fondo_blanco {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 86%;
     background: var(--white);
 }
 
@@ -93,11 +94,12 @@ header {
     margin-right: 20px;
 }
 
-.menu input {
+.menu a {
     color: var(--grey1);
     font-weight: bold;
     font-size: 25px;
     transition: color 0.3s;
+    text-decoration: none;
 }
 
 .menu-icon {
@@ -113,7 +115,7 @@ header {
     margin: 3px 0;
 }
 
-.menu input:hover {
+.menu a:hover {
     color: var(--sc-pink);
     cursor: pointer;
 }
@@ -121,7 +123,7 @@ header {
 /* MARCA */
 .marca {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 70%;
     align-items: center;
 }
 
@@ -167,7 +169,7 @@ header {
     border: solid var(--black) 2px;
     color: var(--grey1);
     font-size: 200%;
-    height: 16.5vh;
+    height: 17.2vh;
     position: relative;
     text-align: center;
     padding-top: 12vh;
@@ -218,8 +220,51 @@ header {
     margin: 50px 0 15px 0;
 }
 
+.fondo_foro {
+    height: 100%;
+}
+
+.panel_escritura {
+    background-color: var(--cc-pink);
+    position: relative;
+    width: 100%;
+    height: 30%;
+    top: 72%;
+    z-index: 499;
+}
+
+.bloqueTexto {
+    background-color: var(--trasnparent-White);
+    border: 1px solid var(--pr-blue);
+    border-radius: 5px;
+    margin: 2%;
+    width: 65%;
+    height: 9vh;
+    padding: 2%;
+
+}
+
+.boton_enviar {
+    position: relative;
+    font-family: Lato;
+    background-color: var(--cc-blue1);
+    border: solid var(--sc-pink) 2px;
+    border-radius: 5px;
+    padding: 15px;
+    width: 25%;
+    cursor: pointer;
+    float: right;
+    top: 50px;
+    right: 1%;
+}
 
 /* Modal Content/Box */
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
 .modal-content {
     background-color: var(--trasnparent-White);
     margin: 5% auto;
@@ -272,6 +317,80 @@ header {
 .seccion_principal {
     position: relative;
 }
+
+/***********************************JUEGO NAVES******************************************/
+.fondoNaves {
+    width: 99%;
+    background-color: black;
+    color: whitesmoke;
+    margin-bottom: 2px;
+    padding: 5px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0px;
+}
+
+#mensaje {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#puntuacion,
+#tiempo {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(173, 255, 47);
+}
+
+/****************************************************************************************/
+.ventana-flotante {
+    position: absolute;
+    right: 1%;
+    top: 13%;
+    width: 50%;
+    height: 20%;
+    background-color: var(--tr-blue);
+    display: none;
+    z-index: 9999;
+    padding: 1%;
+    border-radius: 25px;
+    flex-direction: column;
+}
+
+.ventana-flotante h2 {
+    text-align: center;
+    color: var(--black);
+    margin: 2px 0 15px 0;
+}
+
+.botonFlotante {
+    font-family: Lato;
+    background-color: var(--white);
+    border: solid var(--pr-pink) 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1%;
+    width: 150px;
+    padding: 2px;
+}
+
+/* Estilo para el elemento div con contenido editable "mensaje" */
+.mensaje {
+    width: 700px; /* Establece el ancho máximo del div */
+    max-width: 100%; /* Asegura que no se desborde el contenedor */
+    background-color: var(--white);
+    word-wrap: break-word; /* Permite el salto de línea automático */
+    resize: none; /* Evita el cambio de altura del div */
+    border: 1px solid #ccc; /* Añade un borde para que se parezca a un input */
+    padding: 4px; /* Espacio interior para que se vea mejor */
+    height: 75px; /* Altura fija */
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+
 
 @media (min-width: 769px) {
     header {
@@ -337,12 +456,12 @@ header {
     .silueta1, .silueta5 {
         width: 150%;
         opacity: 40%;
-        top: 25%;
+        top: 15%;
         z-index: 3;
     }
 
     .silueta2, .silueta4 {
-        width: 80%;
+        width: 65%;
         opacity: 60%;
         z-index: 4;
     }
@@ -356,13 +475,12 @@ header {
     }
 
     .silueta3 {
-        top: 3%;
         opacity: 80%;
-        width: 150%;
+        width: 140%;
         z-index: 5;
     }
 
-    .silueta4 {
+    .asilueta4 {
         right: 10%;
     }
 
@@ -510,7 +628,7 @@ header {
     .seccion_principal {
         float: right;
         width: 65%;
-        height: 100%;
+        height: 102%;
         background: var(--grey1);
     }
 
@@ -539,41 +657,59 @@ header {
 
     .dato_img {
         position: relative;
-        left: 50%;
+        right: 50%;
     }
 
     .contrasenias {
         position: relative;
         display: grid;
-        grid-template-columns: repeat(3, 50%);
+        grid-template-columns: repeat(3, 32.5%);
         justify-items: center;
-        left: 25%;
         margin: 3%;
     }
 
     .botones {
         position: relative;
-        display: grid;
+        right: 50%;
+    }
+
+    .botones2 {
+        position: relative;
         left: 50%;
     }
 
     .boton {
-        position: relative;
         font-family: Lato;
         background-color: var(--cc-blue1);
         border: solid var(--pr-pink) 2px;
         border-radius: 5px;
         cursor: pointer;
         margin: 1%;
-        width: 100%;
+        width: 150px;
+        padding: 2px;
     }
 
     .boton:hover {
         padding: 5%;
-        width: 105%;
         left: -2.5%;
     }
 
+    .listaUsuarios {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    .listaUsuarios th, td {
+        border: 1px solid var(--black);
+        padding: 10px;
+        text-align: center;
+    }
+
+    .listaUsuarios th {
+        background-color: var(--cc-blue3);
+        color: var(--white);
+    }
 }
 
 @media (max-width: 768px) {

@@ -20,44 +20,43 @@
 
 		<ul class="menu">
 			<li>
-				<form method="get" action="http://localhost/wiki">
-					<input type="submit" class="opcion" name="wiki" value="Wiki">
-				</form>
+				<a class="opcion" href="/wiki">Wiki</a>
 			</li>
+			<?php
+			if (! session("user")) { ?>
+				<li>
+					<a class="opcion" href="/login">Log IN</a>
+				</li>
+				<li>
+					<a class="opcion" href="/signUp">Registro</a>
+				</li>
+			<?php } else { ?>
+				<li>
+					<a class="opcion" href="/perfil">Perfil</a>
+				</li>
+				<li>
+					<a class="opcion" href="/foro">Foro</a>
+				</li>
+				<li>
+					<a class="opcion" href="/play">Play</a>
+				</li>
+				<li>
+					<a class="opcion" href="/recreativos">Recreativos</a>
+				</li>
+				<?php if (session("user")['esAdmin']) { ?>
+					<li>
+						<a class="opcion" href="/control_usuarios">Usuarios</a>
+					</li>
+					<li>
+						<a class="opcion" href="/control_mensajes">Mensajes</a>
+					</li>
+				<?php } ?>
+				<li>
+					<a class="opcion" href="/logOut">Log Out</a>
+				</li>
+			<?php } ?>
 			<li>
-				<form method="get" action="http://localhost/login">
-					<input type="submit" class="opcion" name="login" value="LogIn"/>
-				</form>
-			</li>
-			<li>
-				<form method="get" action="http://localhost/signUp">
-					<input type="submit" class="opcion" name="signUp" value="Registro"/>
-				</form>
-			</li>
-			<li>
-				<form method="get" action="http://localhost/perfil">
-					<input type="submit" class="opcion" name="perfil" value="Perfil"/>
-				</form>
-			</li>
-			<li>
-				<form method="get" action="http://localhost/foro">
-					<input type="submit" class="opcion" name="foro" value="Foro"/>
-				</form>
-			</li>
-			<li>
-				<form method="get" action="http://localhost/play">
-					<input type="submit" class="opcion" name="play" value="Play"/>
-				</form>
-			</li>
-			<li>
-				<form method="get" action="http://localhost/recreativos">
-					<input type="submit" class="opcion" name="recreativos" value="Recreativos"/>
-				</form>
-			</li>
-			<li>
-				<form method="get" action="http://localhost/">
-					<input type="submit" class="opcion" name="#" value="LogOut"/>
-				</form>
+				<a id="botonMostrarVentana" onclick="mostrarVentanaFlotante()">Contactanos</a>
 			</li>
 		</ul>
 		<div class="menu-icon">
@@ -68,4 +67,12 @@
 	</nav>
 </header>
 <hr class="separator">
-
+<div id="mensajeFlotante" class="ventana-flotante">
+	<div class="contenido-ventana">
+		<h2>Envía un mensaje</h2>
+		<form id="miFormulario" action="http://localhost/guardarmensajes" method="post">
+			<div id="mensaje" name="mensaje" class="mensaje" contenteditable="true"></div>
+			<input class="botonFlotante" type="submit" value="Enviar">
+		</form>
+	</div>
+</div>
