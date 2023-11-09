@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "nombre": "Christopher",
+        "apellido": "Tanaka",
+        "edad": "15",
+        "personalidad": "Alegre, trabajador y apasionado",
+        "historia": "Estudiante estrella de su clase, sus padres tienen muy claro su futuro y lo tienen todo planificado para que se cumplan sus deseos, pero el quería convertirse en chef y abrir su propio restaurante."
+    },
+    {
+        "id": "2",
+        "nombre": "Mei",
+        "apellido": "Fidchet",
+        "edad": "15",
+        "personalidad": "Tímida y dulce",
+        "historia": "Acaba de llegar a la ciudad, es nueva en el instituto, desea ser diseñadora de moda y cuenta con grandes sueños."
+    },
+    {
+        "id": "3",
+        "nombre": "Kevin",
+        "apellido": "Provs",
+        "edad": "15",
+        "personalidad": "Creativo y optimista",
+        "historia": "Es un chico simpatico, apasionado del deporte, popular, parece el típico chico difícil de alcanzar, pero eso no tiene nada que ver con la realidad."
+    },
+    {
+        "id": "4",
+        "nombre": "Hanna",
+        "apellido": "Nakamura",
+        "edad": "16",
+        "personalidad": "Asertiva, reservada y amigable",
+        "historia": "Es una chica aparentemente muy seria, con pocos amigos y de actitud complicada."
+    }
+
+]

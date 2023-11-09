@@ -3,13 +3,29 @@
 		<div class="titulo_pagina">PRETENDIENTES</div>
 		<div class="tituloInfoForm"></div>
 
-		<form method="get" action="http://localhost/wiki">
-			<input class="back_boton" name="menus" type="submit" value="VOLVER">
-		</form>
-
-		<!-- Mostrar los pretendientes -->
-		<table class='lista'>
-
+		<table class="listaUsuarios">
+			<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php foreach ($datosJson as $pretendiente) : ?>
+				<tr>
+					<td>
+						<?=$pretendiente['nombre'];?>
+					</td>
+					<td><?=$pretendiente['apellido'];?></td>
+					<td>
+						<form action="http://localhost/verPretendiente" method="post">
+							<input class="dato" type="hidden" value='<?=$pretendiente['id'];?>' name="id" readonly>
+							<input class="boton" type="submit" name="look" value="Ver">
+						</form>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
 		</table>
 		<!--
 		<form method="get" style="margin-top: 12%; text-align: center;"

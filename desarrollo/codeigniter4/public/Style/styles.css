@@ -423,18 +423,18 @@ h1 {
     }
 
     .background-image:nth-child(1) {
-        background-image: url('../assets/imagenes/fondos/diseno-paisaje-pop-brillante.jpg');
+        background-image: url('../assets/imagenes/fondos/centroNocturno.jpg');
         left: 0;
     }
 
     .background-image:nth-child(2) {
-        background-image: url('../assets/imagenes/fondos/fondo_parque.png');
+        background-image: url('../assets/imagenes/fondos/parque.png');
         left: 33.2%;
         border-left: 5px solid var(--pr-pink);
     }
 
     .background-image:nth-child(3) {
-        background-image: url('../assets/imagenes/fondos/pagoda-yasaka-sannen-zaka-street-kyoto-japon.jpg');
+        background-image: url('../assets/imagenes/fondos/templo.jpg');
         left: 66.33%;
         border-left: 5px solid var(--pr-pink);
     }
@@ -604,6 +604,7 @@ h1 {
         position: relative;
         left: 15px;
         top: -6.7vh;
+        z-index: 999;
     }
 
     .back_boton:active {
@@ -624,7 +625,21 @@ h1 {
         top: 2%;
         width: 75%;
     }
-
+    .img_wiki {
+        position: relative;
+        margin: 0 auto;
+        top: 2%;
+        width: 95%;
+        border: solid var(--pr-blue) 3px;
+    }
+    .img {
+        position: relative;
+        margin: 0 auto;
+        width: 60%;
+        border: solid var(--pr-blue) 3px;
+        padding: 1%;
+        margin-top: 1%;
+    }
     .seccion_principal {
         float: right;
         width: 65%;
@@ -635,6 +650,11 @@ h1 {
     .datos {
         display: grid;
         grid-template-columns: repeat(2, 50%);
+        justify-items: center;
+    }
+    .datosWiki {
+        display: grid;
+        grid-template-columns:  30% 70%;
         justify-items: center;
     }
 

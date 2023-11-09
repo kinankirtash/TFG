@@ -1,11 +1,11 @@
 use rollife;
 
 -- Insertar datos de pretendientes
-INSERT INTO pretendiente (nombre, dificultad)
+INSERT INTO pretendiente (dificultad)
 VALUES
-    ('Hyuna', 'facil'),
-    ('Flora', 'neutra'),
-    ('Koya', 'facil'),
-    ('Patric', 'dificil');
+    ('facil'),
+    ('neutra'),
+    ('facil'),
+    ('dificil');
 
 

@@ -1,0 +1,74 @@
+create table if not exists npc (
+id int unsigned primary key auto_increment,
+nombre varchar (50) not null,
+apellido varchar (50),
+edad int unsigned,
+personalidad varchar (255) not null,
+historia varchar(255)
+);
+
+create table if not exists pretendiente (
+id int unsigned primary key auto_increment,
+nombre varchar (50) not null,
+apellido varchar (50),
+edad int unsigned,
+personalidad varchar (255) not null,
+dificultad enum ('facil','neutra','dificil') not null,
+historia varchar(255)
+);
+
+
+create table if not exists dialogo (
+id int unsigned primary key auto_increment,
+id_capitulo int unsigned,
+	foreign key (id_capitulo)
+		references capitulo (id),
+id_npc int unsigned,
+	foreign key (id_npc)
+		references npc (id),
+id_pretendiente int unsigned,
+	foreign key (id_pretendiente)
+		references pretendiente (id),
+texto varchar (1500) not null
+);
+
+create table if not exists sprite (
+id int unsigned primary key auto_increment,
+id_npc int unsigned,
+	foreign key (id_npc)
+		references npc (id),
+id_pretendiente int unsigned,
+	foreign key (id_pretendiente)
+		references pretendiente (id),
+imagen varchar(255),
+url varchar(255),
+emocion enum ('feliz','neutra','triste','enfadado','sorprendido') not null
+);
+
+create table if not exists opcion (
+id int unsigned primary key auto_increment,
+id_capitulo int unsigned,
+	foreign key (id_capitulo)
+		references capitulo (id),
+texto varchar (1500) not null
+);
+
+create table if not exists capitulo_sprite (
+id_capitulo int unsigned,
+	foreign key (id_capitulo)
+		references capitulo (id),
+id_sprite int unsigned,
+	foreign key (id_sprite)
+		references sprite (id),
+primary key (id_capitulo, id_sprite)
+);
+
+create table if not exists seleccion (
+id_opcion int unsigned,
+	foreign key (id_opcion)
+		references opcion (id),
+id_usuario int unsigned,
+	foreign key (id_usuario)
+		references usuario (id),
+primary key (id_opcion, id_usuario)
+);

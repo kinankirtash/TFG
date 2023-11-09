@@ -9,7 +9,7 @@ if (! session("user")) {
 			<div class="titulo_pagina">USUARIOS</div>
 			<div class="tituloInfoForm"></div>
 			<!-- Mostrar los Usuarios -->
-			<table class="listaUsuarios">
+			<table>
 				<thead>
 				<tr>
 					<th>Nombre</th>

@@ -25,9 +25,9 @@ deleted tinyint (1) not null default 0,
 profile_image varchar(255),
 url varchar(255)
 );
+
 create table if not exists pretendiente (
 id int unsigned primary key auto_increment,
-nombre varchar (50) not null,
 dificultad enum ('facil','neutra','dificil') not null
 );
 

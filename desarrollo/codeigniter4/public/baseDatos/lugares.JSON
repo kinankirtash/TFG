@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "nombre": "Aula A",
+    "descripcion": "Tu nuevo Aula, será testigo de tus nuevas aventuras y desamores.",
+    "imagen": "assets/imagenes/fondos/claseA.jpg"
+  },
+  {
+    "id": "2",
+    "nombre": "Parque",
+    "descripcion": "Un acogedor parque para dar paseos.",
+    "imagen": "assets/imagenes/fondos/parque.png"
+
+  },
+  {
+    "id": "3",
+    "nombre": "Centro nocturno",
+    "descripcion": "El movido centro se intensifica con la llegada de la noche.",
+    "imagen": "assets/imagenes/fondos/centroNocturno.png"
+
+  },
+  {
+    "id": "4",
+    "nombre": "Templo",
+    "descripcion": "Un histórico Templo situado en la parte alta de la ciudad",
+    "imagen": "assets/imagenes/fondos/templo.jpg"
+  }
+]

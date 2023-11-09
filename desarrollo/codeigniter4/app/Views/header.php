@@ -55,9 +55,11 @@
 					<a class="opcion" href="/logOut">Log Out</a>
 				</li>
 			<?php } ?>
+			<!--
 			<li>
 				<a id="botonMostrarVentana" onclick="mostrarVentanaFlotante()">Contactanos</a>
 			</li>
+			-->
 		</ul>
 		<div class="menu-icon">
 			<div class="bar"></div>

@@ -9,8 +9,12 @@ $routes->get('/', 'Home::index');
 
 $routes->get('wiki', 'wikiController::index');
 $routes->get('pretendientes', 'wikiController::pretendientesLista');
+$routes->post('verPretendiente', 'wikiController::verPretendiente');
 $routes->get('personajes', 'wikiController::personajesLista');
+$routes->post('verPersonaje', 'wikiController::verPersonaje');
 $routes->get('lugares', 'wikiController::lugaresLista');
+$routes->post('verLugar', 'wikiController::verLugar');
+
 
 $routes->get('login', 'Users::login');
 $routes->post('login', 'Users::login');

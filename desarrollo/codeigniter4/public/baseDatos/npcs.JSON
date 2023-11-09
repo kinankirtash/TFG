@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "nombre": "Davitsu",
+    "apellido": "Oreka",
+    "edad": "??",
+    "personalidad": "Generoso",
+    "historia": "Si, es un velociraptor y si, es tu profesor.",
+    "imagen": "assets/imagenes/sprites/Davitsu.png"
+  },
+  {
+    "id": "2",
+    "nombre": "Love",
+    "apellido": "Haruki",
+    "edad": "27",
+    "personalidad": "Afable, despistada, torpe y muy Sensible",
+    "historia": "Es la secretaria del centro, te ayudara en todo lo que necesites.",
+    "imagen": "assets/imagenes/sprites/Love.png"
+  }
+]
