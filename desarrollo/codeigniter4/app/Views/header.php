@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="assets/logo/logo_no_flores2.png">
 	<link rel="stylesheet" href="Style/styles.css">
+	<link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+	        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+	        crossorigin="anonymous"></script>
 	<title>Rolleaf</title>
 </head>
 <body>

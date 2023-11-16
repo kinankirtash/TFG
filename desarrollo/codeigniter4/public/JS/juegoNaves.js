@@ -12,6 +12,10 @@ var stop;
 
 function canvasFondo() {
     canvas = document.getElementById('dibujo');
+    if (!canvas) {
+        return
+    }
+    ;
     ctx = canvas.getContext('2d');
     pintarFondo();
     pintarNave();

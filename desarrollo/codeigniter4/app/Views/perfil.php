@@ -39,7 +39,8 @@
 			       placeholder="email" name="email" id="email"
 			       onchange="validateEmail()">
 
-			<input class="dato" type="number" value="Edad" placeholder="edad" id="edad" name="edad" min="7">
+			<input class="dato" type="number" value="<?php echo $_SESSION["user"]["edad"]; ?>" placeholder="edad"
+			       id="edad" name="edad" min="7">
 			<input class="dato " type="file" name="imagen" id="imagen">
 			<br>
 			<input class="dato dato_img" type="password" placeholder="Contraseña" id="password"

@@ -52,6 +52,12 @@ $routes->post('avanzarDialogo', 'Play::avanzarDialogo');
 $routes->post('elegirRespuesta', 'Play::elegirRespuesta');
 
 $routes->get('foro', 'Foro::foro');
+$routes->post('foro', 'Foro::foro');
+$routes->post('comenta', 'Foro::comentar');
+$routes->post('verPerfil', 'Users::verOtroPerfil');
+$routes->post('denunciarComentario', 'Foro::denunciarComentario');
+$routes->post('denunciarUsuario', 'Users::denunciarUsuario');
+$routes->post('bloquearUsuario', 'Foro::bloquearUsuario');
 
 $routes->get('contacta', 'Mensajes::contacta');
 $routes->post('control_mensajes', 'Mensajes::control_mensajes');

@@ -29,13 +29,13 @@ class Mensajes extends BaseController
     {
         // Obtiene el mensaje desde la solicitud POST
         $mensaje = $this->request->getPost('mensaje');
-
+        $tipo = "Mensaje";
         // Obtiene el ID de usuario si hay una sesión iniciada, de lo contrario, es null
         $id = session('user') ? session('user')['id'] : null;
         // Obtiene el nickname del usuario si hay una sesión iniciada, de lo contrario, es "Invitado"
         $nick = session('user') ? session('user')['nickname'] : 'Invitado';
         // Guarda el mensaje en la base de datos
-        $guardarMsg = $this->msgModel->guardarMensaje($id, $nick, $mensaje);
+        $guardarMsg = $this->msgModel->guardarMensaje($id, $nick, $mensaje, $tipo);
         if (! $guardarMsg) {
             $response = 'Ha ocurrido algo imprevisto durante el envío';
         } else {
@@ -112,5 +112,10 @@ class Mensajes extends BaseController
         $data['msg'] = 'El mensaje ha sido eliminada con éxito';
 
         return $this->control_mensajes();
+    }
+
+    public function denunciarUsuario()
+    {
+
     }
 }

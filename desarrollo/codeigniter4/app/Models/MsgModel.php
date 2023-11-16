@@ -18,7 +18,7 @@ class MsgModel extends Model
 
     protected $allowedFields = ['id_usuario', 'remitente', 'texto', 'tipo'];
 
-    public function guardarMensaje($id, $nick, $mensaje)
+    public function guardarMensaje($id, $nick, $mensaje, $tipo)
     {
         $db = \Config\Database::connect();
         $builder = $db->table('mensaje');
@@ -26,7 +26,7 @@ class MsgModel extends Model
             'id_usuario' => $id,
             'remitente' => $nick,
             'texto' => $mensaje,
-            'tipo' => "Mensaje",
+            'tipo' => $tipo,
         ];
 
         return $builder->insert($data);

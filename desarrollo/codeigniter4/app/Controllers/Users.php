@@ -10,6 +10,8 @@ use App\Models\UsersModel;
 use App\Models\UsersCapModel;
 use App\Models\UsersPretModel;
 use App\Models\JuegoModel;
+use App\Models\MsgModel;
+use App\Models\BloquearModel;
 
 // Importa el modelo
 
@@ -24,12 +26,18 @@ class Users extends BaseController
 
     protected $capituloModel;
 
+    protected $msgModel;
+
+    protected $blockModel;
+
     public function __construct()
     {
         $this->userModel = new UsersModel();
         $this->jugadoModel = new UsersCapModel();
         $this->relacionModel = new UsersPretModel();
         $this->capituloModel = new JuegoModel();
+        $this->msgModel = new MsgModel();
+        $this->blockModel = new BloquearModel();
     }
 
     public function login()
@@ -458,6 +466,76 @@ class Users extends BaseController
 
         return template('usuarios', $data);
     }
+
+    public function verOtroPerfil($mensaje = null, $id = null)
+    {
+        // DATA DEBUG
+        $data = [
+            'error' => false,
+            'msg' => "Debes introducir la contraseña",
+        ];
+
+        if (! session("user")) {
+            $data = [
+                'error' => true,
+                'msg' => "Debes iniciar sesión",
+            ];
+
+            return template('login', $data);
+        }
+
+        if ($mensaje != null) {
+            $data = [
+                'error' => true,
+                'msg' => $mensaje,
+            ];
+        }
+
+        if ($id != null) {
+            $idUsuario = $id;
+        } else {
+            $idUsuario = $this->request->getPost('id_remitente');
+        }
+
+        // También puedes verificar si $idUsuario está vacío o no es numérico
+        if (empty($idUsuario)) {
+            $data = [
+                'error' => true,
+                'msg' => "ID de usuario no válido",
+            ];
+
+            return template('verOtroPerfil', $data);
+        }
+
+        $data['usuario'] = $this->userModel->find($idUsuario);
+
+        return template('verOtroPerfil', $data);
+    }
+
+    public function denunciarUsuario()
+    {
+        // Obtiene el mensaje desde la solicitud POST
+        $usuario = $this->request->getPostGet('usuario');
+        $idUsuario = $this->request->getPostGet('id');
+        $mensaje = "Quiero denunciar al siguiente Usuario : (".$usuario.") por conducta propiada ";
+        $tipo = "Reporte Usuario";
+        // Obtiene el ID de usuario si hay una sesión iniciada, de lo contrario, es null
+        $id = session('user')['id'];
+        // Obtiene el nickname del usuario si hay una sesión iniciada, de lo contrario, es "Invitado"
+        $nick = session('user')['nickname'];
+        // Guarda el mensaje en la base de datos
+        $denundiarUsuario = $this->msgModel->guardarMensaje($id, $nick, $mensaje, $tipo);
+
+        $response = '';
+
+        if (! $denundiarUsuario) {
+            $response = 'Ha ocurrido algo imprevisto durante la denuncia';
+        }
+
+        return $this->verOtroPerfil($response, $idUsuario);
+    }
+
+
 }
 
 
