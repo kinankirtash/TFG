@@ -11,20 +11,23 @@
 			</tr>
 			</thead>
 			<tbody>
-			<?php foreach ($datosJson as $pretendiente) : ?>
-				<tr>
-					<td>
-						<?=$pretendiente['nombre'];?>
-					</td>
-					<td><?=$pretendiente['apellido'];?></td>
-					<td>
-						<form action="http://localhost/verPretendiente" method="post">
-							<input class="dato" type="hidden" value='<?=$pretendiente['id'];?>' name="id" readonly>
-							<input class="boton" type="submit" name="look" value="Ver">
-						</form>
-					</td>
-				</tr>
-			<?php endforeach; ?>
+			<?php
+			if ($datosJson !== null) {
+				foreach ($datosJson as $pretendiente) : ?>
+					<tr>
+						<td>
+							<?=$pretendiente['nombre'];?>
+						</td>
+						<td><?=$pretendiente['apellido'];?></td>
+						<td>
+							<form action="http://localhost/verPretendiente" method="post">
+								<input class="dato" type="hidden" value='<?=$pretendiente['id'];?>' name="id" readonly>
+								<input class="boton" type="submit" name="look" value="Ver">
+							</form>
+						</td>
+					</tr>
+				<?php endforeach;
+			} ?>
 			</tbody>
 		</table>
 		<!--

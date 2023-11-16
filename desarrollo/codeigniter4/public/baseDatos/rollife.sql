@@ -23,8 +23,12 @@ telefono varchar (20),
 contrasenia varchar (255) not null,
 deleted tinyint (1) not null default 0,
 profile_image varchar(255),
-url varchar(255)
+url varchar(255),
+avatar enum ('a','b')
 );
+ALTER TABLE usuario
+ADD avatar enum ('a','b');
+
 
 create table if not exists pretendiente (
 id int unsigned primary key auto_increment,
@@ -65,8 +69,10 @@ id_usuario int unsigned,
 	foreign key (id_usuario)
 		references usuario (id),
 primary key (id_capitulo, id_usuario),
-porcentaje int unsigned not null
+porcentaje int unsigned not null check (porcentaje <= 100),
+ultimoDialogo varchar (50) not null
 );
+drop TABLE jugado;
 
 create table if not exists relacion (
 id_pretendiente int unsigned,
@@ -76,8 +82,8 @@ id_usuario int unsigned,
 	foreign key (id_usuario)
 		references usuario (id),
 primary key (id_pretendiente, id_usuario),
-interes int unsigned not null,
-nivel int unsigned not null
+interes int unsigned not null check (interes <= 100),
+nivel int unsigned not null check (nivel <= 10)
 );
 
 create table if not exists bloqueo (

@@ -3,14 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\PretendientesModel;
+use App\Models\UsersPretModel;
 
 class WikiController extends BaseController
 {
-    protected $pretendientesModel; // Declara una propiedad para el modelo
+    // Declara una propiedad para el modelo
+    protected $pretendientesModel;
+
+    protected $relacionModel;
 
     public function __construct()
     {
         $this->pretendientesModel = new PretendientesModel();
+        $this->relacionModel = new UsersPretModel();
     }
 
     public function index()
@@ -18,9 +23,9 @@ class WikiController extends BaseController
         return template('wikiOpciones');
     }
 
-    public function wikiOpcion()
+    public function control()
     {
-        return template('wiki');
+        return template('control');
     }
 
     public function pretendientesLista()
@@ -36,17 +41,20 @@ class WikiController extends BaseController
 
     public function verPretendiente()
     {
-        $id = $this->request->getPostGet('id');
+        if (session("user")) {
+            $id = session("user")['id'];
+        }
+        $idPretendiente = $this->request->getPostGet('id');
         $path = 'baseDatos/pretendientes.JSON';
         $jsonString = file_get_contents($path);
         $jsonData = json_decode($jsonString, true);
-        $path2 = 'baseDatos/pretendientesSprites.JSON';
-        $jsonString2 = file_get_contents($path2);
-        $jsonData2 = json_decode($jsonString2, true);
         foreach ($jsonData as $actual) {
-            if ($actual['id'] == $id) {
+            if ($actual['id'] == $idPretendiente) {
                 $data['pretendiente'] = $actual;
-                $data['bbdd'] = $this->pretendientesModel->obtenerPretendiente($id);
+                $data['bbdd'] = $this->pretendientesModel->obtenerPretendiente($idPretendiente);
+                if (session("user")) {
+                    $data['relacion'] = $this->relacionModel->obtenerRelacionPretendiente($id, $idPretendiente);
+                }
             }
         }
 

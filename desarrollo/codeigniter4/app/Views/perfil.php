@@ -1,6 +1,10 @@
 <div class="fondo_blanco">
 	<div class="seccion_ayuda">
-		<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
+		<?php if (isset($_SESSION["user"]["profile_image"]) && isset($_SESSION["user"]["url"])): ?>
+			<img class="img_wiki" src="<?=$_SESSION["user"]["url"]?>">
+		<?php else: ?>
+			<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
+		<?php endif; ?>
 	</div>
 	<div class="seccion_principal">
 		<div class="titulo_pagina"><h2>Perfil</h2></div>
@@ -10,7 +14,7 @@
 			echo "<div class='error'>".esc($msg)."</div>";
 		}
 		?>
-		<form class="datos" action="http://localhost/update" method="post">
+		<form class="datos" action="http://localhost/update" method="post" enctype="multipart/form-data">
 			<input class="dato" type="hidden" value='<?php echo $_SESSION["user"]["id"]; ?>' name="id" readonly>
 			<input class="dato" type="text" value='<?php echo $_SESSION["user"]["nickname"]; ?>'
 			       placeholder="Nick"

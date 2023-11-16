@@ -22,6 +22,9 @@
 			<li>
 				<a class="opcion" href="/wiki">Wiki</a>
 			</li>
+			<li>
+				<a class="opcion" href="/contacta">Contactanos</a>
+			</li>
 			<?php
 			if (! session("user")) { ?>
 				<li>
@@ -31,50 +34,42 @@
 					<a class="opcion" href="/signUp">Registro</a>
 				</li>
 			<?php } else { ?>
+
 				<li>
-					<a class="opcion" href="/perfil">Perfil</a>
-				</li>
-				<li>
-					<a class="opcion" href="/foro">Foro</a>
-				</li>
-				<li>
-					<a class="opcion" href="/play">Play</a>
+					<a class="opcion" href="/play">Juega</a>
 				</li>
 				<li>
 					<a class="opcion" href="/recreativos">Recreativos</a>
 				</li>
+				<li>
+					<a class="opcion" href="/foro">Comenta</a>
+				</li>
+				<li>
+					<a class="opcion" href="/perfil">Perfil</a>
+				</li>
 				<?php if (session("user")['esAdmin']) { ?>
 					<li>
-						<a class="opcion" href="/control_usuarios">Usuarios</a>
-					</li>
-					<li>
-						<a class="opcion" href="/control_mensajes">Mensajes</a>
+						<a class="opcion" href="/control">Control</a>
 					</li>
 				<?php } ?>
 				<li>
 					<a class="opcion" href="/logOut">Log Out</a>
 				</li>
 			<?php } ?>
-			<!--
-			<li>
-				<a id="botonMostrarVentana" onclick="mostrarVentanaFlotante()">Contactanos</a>
-			</li>
-			-->
 		</ul>
 		<div class="menu-icon">
 			<div class="bar"></div>
 			<div class="bar"></div>
 			<div class="bar"></div>
 		</div>
+		<?php if (session("user")): ?>
+			<div class="profile">
+				<?php if (isset($_SESSION["user"]["profile_image"]) && isset($_SESSION["user"]["url"])): ?>
+					<img class="profile_image" src="<?=$_SESSION["user"]["url"]?>">
+				<?php endif; ?>
+				<?php echo $_SESSION["user"]["nickname"]; ?>
+			</div>
+		<?php endif; ?>
 	</nav>
 </header>
 <hr class="separator">
-<div id="mensajeFlotante" class="ventana-flotante">
-	<div class="contenido-ventana">
-		<h2>Envía un mensaje</h2>
-		<form id="miFormulario" action="http://localhost/guardarmensajes" method="post">
-			<div id="mensaje" name="mensaje" class="mensaje" contenteditable="true"></div>
-			<input class="botonFlotante" type="submit" value="Enviar">
-		</form>
-	</div>
-</div>

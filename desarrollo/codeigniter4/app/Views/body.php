@@ -19,8 +19,8 @@
 	<div id="bottom">
 		<div class="contenido">
 			<a class="subir" href="#top">
-			<img class="logo" src="assets/logo/logo_no_flores2.png">
-			<div class="titulo">Rolleaf</div>
+				<img class="logo" src="assets/logo/logo_no_flores2.png">
+				<div class="titulo">Rolleaf</div>
 			</a>
 			<div class="tituloInfo"></div>
 			<div class="Info">

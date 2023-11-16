@@ -3,6 +3,7 @@
 namespace App\models;
 
 use CodeIgniter\Model;
+use \CodeIgniter\Model\PaginationTrait;
 
 class UsersModel extends Model
 {
@@ -34,8 +35,18 @@ class UsersModel extends Model
         return $this->insertID();
     }
 
-    public function actualizarUsuario($id, $nombre, $apellido1, $apellido2, $nick, $edad, $email, $telefono)
-    {
+    public function actualizarUsuario(
+        $id,
+        $nombre,
+        $apellido1,
+        $apellido2,
+        $nick,
+        $edad,
+        $email,
+        $telefono,
+        $nombreImg,
+        $rutaImg
+    ) {
         $db = \Config\Database::connect();
         $builder = $db->table('usuario');
 
@@ -47,6 +58,8 @@ class UsersModel extends Model
             'edad' => $edad,
             'email' => $email,
             'telefono' => $telefono,
+            'profile_image' => $nombreImg,
+            'url' => $rutaImg,
         ];
 
         $builder->where('id', $id);
@@ -134,8 +147,47 @@ class UsersModel extends Model
         return $builder->update($data);
     }
 
+    public function avatar($id, $avatar)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('usuario');
+
+        $data = [
+            'avatar' => $avatar,
+        ];
+
+        $builder->where('id', $id);
+        // Actualiza el avatar en la sesión
+        session("user")['avatar'] = $avatar;
+
+        return $builder->update($data);
+    }
+
     public function obtenerUsuarioNick($nick)
     {
         return $this->where('nickname', $nick)->first();
+    }
+
+    public function obtenerUsuarioId($id)
+    {
+        return $this->where('id', $id)->first();
+    }
+
+    public function numPaginas()
+    {
+        // Obtén el paginador actual
+        $pager = $this->pager;
+
+        // Si no hay datos o getTotal() devuelve null, no hay páginas
+        if (empty($pager) || $pager->getTotal() === null) {
+            return 0;
+        }
+
+        // Calcula el número total de páginas
+        $totalItems = $pager->getTotal();
+        $perPage = $pager->perPage();
+        $numPags = ceil($totalItems / $perPage);
+
+        return $numPags;
     }
 }

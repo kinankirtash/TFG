@@ -182,8 +182,11 @@ function detectarColision() {
         var b = fondoNave.data[i + 2]; // Componente azul del color del píxel
 
         if (r == 212 && g == 175 && b == 55) {
+            var spanPuntuacion = document.getElementById('puntuacion');
+            spanPuntuacion.innerHTML = 0;
             var mensaje = "Has chocado con un asteroide. Pulsa AQUI para reintentar";
-            finalizar(mensaje);
+            var victoria = false;
+            finalizar(victoria, mensaje);
             break;
         }
 
@@ -200,15 +203,21 @@ function detectarColision() {
         }
 
         if (r == 128 && g == 0 && b == 128) {
+            var victoria = true;
             var mensaje = "Felicidades has llegado. Pulsa AQUI para volver a jugar";
-            finalizar(mensaje);
+            finalizar(victoria, mensaje);
             break;
         }
     }
 }
 
-function finalizar(mensaje) {
+function finalizar(victoria, mensaje) {
     var spanMensaje = document.getElementById("mensaje");
+    if (victoria) {
+        spanMensaje.style.color = "green";
+    } else {
+        spanMensaje.style.color = "red";
+    }
     spanMensaje.innerHTML = mensaje;
     window.removeEventListener("keydown", moverNave, true);
     clearTimeout(stop);
@@ -219,8 +228,9 @@ function temporizador() {
     var tiempoActual = parseInt(spanTiempo.innerHTML);
 
     if (tiempoActual <= 0) {
-        var mensaje = "Se ha acabado el tiempo";
-        finalizar(mensaje);
+        var mensaje = "Se ha acabado el tiempo. Pulsa AQUI para reintentar";
+        var victoria = false;
+        finalizar(victoria, mensaje);
     } else {
         tiempoActual--;
         spanTiempo.innerHTML = tiempoActual;

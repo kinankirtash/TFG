@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
+    "texto": "Este es un diálogo de introducción.",
+    "id_Npc": "1",
+    "siguiente_dialogo": 2
+  },
+  {
+    "id": 2,
+    "id_capitulo": 1,
+    "tipo": "pregunta",
+    "texto": "¿Qué camino tomarás?,",
+    "id_Pretendiente": "3",
+    "expresion": "neutra",
+    "opciones": [
+      {
+        "id": 2.1,
+        "texto": "Tomar el camino A, Christopher",
+        "id_afectado": 1,
+        "reaccion": "buena",
+        "siguiente_dialogo": 3
+      },
+      {
+        "id": 2.2,
+        "texto": "Tomar el camino B, Mei",
+        "id_afectado": 2,
+        "reaccion": "mala",
+        "siguiente_dialogo": 4
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
+    "texto": "Has elegido el camino A.",
+    "id_Npc": "1",
+    "siguiente_dialogo": 5
+  },
+  {
+    "id": 4,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
+    "texto": "Has elegido el camino B.",
+    "id_Npc": "1",
+    "siguiente_dialogo": 5
+  },
+  {
+    "id": 5,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
+    "texto": "Falta un dialogo más.",
+    "id_Npc": "2",
+    "siguiente_dialogo": 6
+  },
+  {
+    "id": 6,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
+    "texto": "Dialogo final."
+  },
+
+
+  {
+    "id": 1,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Este es un diálogo de introducción.",
+    "id_Pretendiente": "4",
+    "expresion": "neutra",
+    "siguiente_dialogo": 2
+  },
+  {
+    "id": 2,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "texto": "¿Qué camino tomarás?,",
+    "id_Pretendiente": "4",
+    "expresion": "feliz",
+    "opciones": [
+      {
+        "id": 2.1,
+        "texto": "Tomar el camino A, Christopher",
+        "id_afectado": 1,
+        "reaccion": "buena",
+        "siguiente_dialogo": 3
+      },
+      {
+        "id": 2.2,
+        "texto": "Tomar el camino B, Mei",
+        "id_afectado": 2,
+        "reaccion": "mala",
+        "siguiente_dialogo": 4
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Has elegido el camino A.",
+    "id_Pretendiente": "4",
+    "expresion": "molesta",
+    "siguiente_dialogo": 5
+  },
+  {
+    "id": 4,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Has elegido el camino B.",
+    "id_Pretendiente": "4",
+    "expresion": "triste",
+    "siguiente_dialogo": 5
+  },
+  {
+    "id": 5,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Falta un dialogo más.",
+    "id_Pretendiente": "4",
+    "expresion": "sorprendida",
+    "siguiente_dialogo": 6
+  },
+  {
+    "id": 6,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Dialogo final."
+  }
+]

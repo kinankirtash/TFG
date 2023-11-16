@@ -10,13 +10,12 @@
     "nombre": "Parque",
     "descripcion": "Un acogedor parque para dar paseos.",
     "imagen": "assets/imagenes/fondos/parque.png"
-
   },
   {
     "id": "3",
     "nombre": "Centro nocturno",
     "descripcion": "El movido centro se intensifica con la llegada de la noche.",
-    "imagen": "assets/imagenes/fondos/centroNocturno.png"
+    "imagen": "assets/imagenes/fondos/centroNocturno.jpg"
 
   },
   {

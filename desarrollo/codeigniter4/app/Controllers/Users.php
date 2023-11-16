@@ -2,18 +2,34 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Config\Services;
+
 use function PHPUnit\Framework\isEmpty;
+
 use App\Models\UsersModel;
+use App\Models\UsersCapModel;
+use App\Models\UsersPretModel;
+use App\Models\JuegoModel;
 
 // Importa el modelo
 
 class Users extends BaseController
 {
-    protected $userModel; // Declara una propiedad para el modelo
+    // Declara una propiedad para el modelo
+    protected $userModel;
+
+    protected $jugadoModel;
+
+    protected $relacionModel;
+
+    protected $capituloModel;
 
     public function __construct()
     {
         $this->userModel = new UsersModel();
+        $this->jugadoModel = new UsersCapModel();
+        $this->relacionModel = new UsersPretModel();
+        $this->capituloModel = new JuegoModel();
     }
 
     public function login()
@@ -153,6 +169,7 @@ class Users extends BaseController
             'error' => true,
             'msg' => "Debes introducir la contraseña",
         ];
+
         if (! session("user")) {
             $data['msg'] = "Debes iniciar sesión";
 
@@ -161,6 +178,19 @@ class Users extends BaseController
         //COMPROBAR SI EL BOTON TIENE VALOR
         if (! $this->request->getPostGet('update')) {
             $data['error'] = false;
+        }
+
+        $nombreImagen = $rutaImagen = '';
+        //Si se sube una imagen, coger los datos
+        if (! empty($_FILES['imagen']['name'])) {
+            $cargarImagenResult = $this->cargarImagen();
+
+            if ($cargarImagenResult['success']) {
+                $nombreImagen = $cargarImagenResult['nombreImagen'];
+                $rutaImagen = $cargarImagenResult['rutaImagen'];
+            } else {
+                $data['msg'] = 'Error al cargar la imagen: '.$cargarImagenResult['error'];
+            }
         }
 
         // VARIABLES REQUEST
@@ -184,15 +214,23 @@ class Users extends BaseController
 
             if (password_verify($password, session("user")['contrasenia'])) {
                 // INTENTAMOS ACTUALIZAR USUARIO
-                $updateUser = $this->userModel->actualizarUsuario($id, $nombre, $apellido1, $apellido2, $nick, $edad, $email, $telefono);
-                // COMPROBAMOS Update
-                if (! $updateUser) {
-                    $data['msg'] = 'Ha ocurrido algo imprevisto durante la actualización';
 
-                    return template('perfil', $data);
+                $updateUser = $this->userModel->actualizarUsuario($id, $nombre, $apellido1, $apellido2, $nick, $edad, $email, $telefono, $nombreImagen, $rutaImagen);
+
+                // COMPROBAMOS Update
+                if ($updateUser) {
+                    // Recupera los datos actualizados del usuario desde la base de datos
+                    $usuarioActualizado = $this->userModel->obtenerUsuarioId($id);
+
+                    // Actualiza la sesión del usuario con los datos actualizados
+                    session()->set("user", $usuarioActualizado);
+
+                    $data['msg'] = 'Los datos se han actualizado correctamente';
+                } else {
+                    $data['msg'] = 'Ha ocurrido algo imprevisto durante la actualización';
                 }
             }
-            $data['error'] = false;
+            $data['error'] = true;
         }
 
         return template('perfil', $data);
@@ -263,10 +301,10 @@ class Users extends BaseController
 
         if (password_verify($password, session("user")['contrasenia'])) {
             // INTENTAMOS cambiar la contrasenia
-            $updateUser = $this->userModel->borrarUsuario($id);
+            $deleteUser = $this->userModel->borrarUsuario($id);
 
             // COMPROBAMOS Update
-            if (! $updateUser) {
+            if (! $deleteUser) {
                 $data['msg'] = 'Ha ocurrido algo imprevisto durante la eliminación';
 
                 return template('eliminarCuenta', $data);
@@ -279,35 +317,6 @@ class Users extends BaseController
         }
 
         return template('eliminarCuenta', $data);
-    }
-
-    public function controlUsuarios()
-    {
-        $data = [
-            'error' => false,
-        ];
-        if (! session("user")) {
-            // Si el usuario no ha iniciado sesión, muestra un mensaje y redirige a la página de inicio de sesión.
-            $data['error'] = true;
-            $data['msg'] = "Debes iniciar sesión";
-
-            return template('login', $data);
-        }
-
-        if (! session("user")['esAdmin']) {
-            // Si el usuario no es un administrador, muestra un mensaje y redirige a la página de perfil.
-            $data['error'] = true;
-            $data['msg'] = "No tienes acceso a esta página";
-
-            return template('perfil', $data);
-        }
-
-        // Si el usuario ha iniciado sesión y es un administrador, continúa con la lógica para mostrar la lista de usuarios.
-        $userID = session('user')['id'];
-
-        $data['usuarios'] = $this->userModel->where('id !=', $userID)->where('deleted', 0)->findAll();
-
-        return template('usuarios', $data);
     }
 
     public function nivelUsuario()
@@ -338,7 +347,7 @@ class Users extends BaseController
         $id = $this->request->getPostGet('id');
         $acceso = $this->request->getPostGet('acceso');
 
-        // INTENTAMOS cambiar la contrasenia
+        // cambiamos el acceso
         $updateAcceso = $this->userModel->accesoUsuario($id, $acceso);
 
         // COMPROBAMOS Update
@@ -378,6 +387,76 @@ class Users extends BaseController
 
         // Llama a controlUsuarios al final
         return $this->controlUsuarios();
+    }
+
+    public function cargarImagen()
+    {
+        $data['success'] = false;
+
+        if (session("user")) {
+            helper(['form', 'url']);
+            $validation = \Config\Services::validation();
+
+            $config['upload_path'] = FCPATH.'assets/uploads/'; // Directorio donde se guardarán las imágenes
+            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; // Tipos de archivos permitidos
+            $config['max_size'] = 2048; // Tamaño máximo del archivo en kilobytes
+
+            $this->validate([
+                'imagen' => 'uploaded[imagen]|max_size[imagen,2048]|ext_in[imagen,gif,jpg,png,jpeg,bmp]',
+            ]);
+
+            $file = $this->request->getFile('imagen');
+
+            if ($file->getError() !== UPLOAD_ERR_OK) {
+                // La carga de la imagen falló, manejar el error según tus necesidades
+                $data['error'] = $file->getErrorString();
+            } else {
+                $data['success'] = true;
+                // La imagen se cargó correctamente, guardar detalles en la base de datos
+                $file->move($config['upload_path']);
+                $nombreImagen = $file->getName();
+                $rutaImagen = base_url('assets/uploads/'.$nombreImagen);// Ruta completa de la imagen en el servidor
+
+                $data['nombreImagen'] = $nombreImagen;
+                $data['rutaImagen'] = $rutaImagen;
+            }
+        }
+
+        return $data;
+    }
+
+    public function controlUsuarios()
+    {
+        $data = [
+            'error' => false,
+        ];
+        if (! session("user")) {
+            // Si el usuario no ha iniciado sesión, muestra un mensaje y redirige a la página de inicio de sesión.
+            $data['error'] = true;
+            $data['msg'] = "Debes iniciar sesión";
+
+            return template('login', $data);
+        }
+
+        if (! session("user")['esAdmin']) {
+            // Si el usuario no es un administrador, muestra un mensaje y redirige a la página de perfil.
+            $data['error'] = true;
+            $data['msg'] = "No tienes acceso a esta página";
+
+            return template('perfil', $data);
+        }
+
+        // Si el usuario ha iniciado sesión y es un administrador, continúa con la lógica para mostrar la lista de usuarios.
+        $userID = session('user')['id'];
+
+        // Condiciones para la consulta
+        $this->userModel->where('id !=', $userID);
+        $this->userModel->where('deleted', 0);
+
+        // Obtén los usuarios para la página actual
+        $data['usuarios'] = $this->userModel->findAll();
+
+        return template('usuarios', $data);
     }
 }
 

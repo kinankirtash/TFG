@@ -1,12 +1,12 @@
-<?php
-if (! session("user")) {
-	$data['error'] = false;
-
-	return template('login', $data);
-} else { ?>
-	<div class="fondo_blanco">
+<div class="fondo_blanco">
 	<div class="seccion_ayuda" style="width: 30%">
-		<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
+		<?php if ($_SESSION["user"]["avatar"] == "a") { ?>
+			<img class="img_wiki" src="assets/imagenes/sprites/avatarA.png">
+		<?php } elseif ($_SESSION["user"]["avatar"] == "b") { ?>
+			<img class="img_wiki" src="assets/imagenes/sprites/avatarB.png">
+		<?php } else { ?>
+			<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
+		<?php } ?>
 		<input class="dato" type="text" value='<?php echo $_SESSION["user"]["nickname"]; ?>'
 		       placeholder="Nick"
 		       name="nick" id="nick" readonly>
@@ -19,5 +19,3 @@ if (! session("user")) {
 		</div>
 		<canvas id="dibujo" width="990" height="600"></canvas>
 	</div>
-
-<?php } ?>

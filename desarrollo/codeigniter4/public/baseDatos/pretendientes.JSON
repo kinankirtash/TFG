@@ -1,35 +1,102 @@
 [
-    {
-        "id": "1",
-        "nombre": "Christopher",
-        "apellido": "Tanaka",
-        "edad": "15",
-        "personalidad": "Alegre, trabajador y apasionado",
-        "historia": "Estudiante estrella de su clase, sus padres tienen muy claro su futuro y lo tienen todo planificado para que se cumplan sus deseos, pero el quería convertirse en chef y abrir su propio restaurante."
-    },
-    {
-        "id": "2",
-        "nombre": "Mei",
-        "apellido": "Fidchet",
-        "edad": "15",
-        "personalidad": "Tímida y dulce",
-        "historia": "Acaba de llegar a la ciudad, es nueva en el instituto, desea ser diseñadora de moda y cuenta con grandes sueños."
-    },
-    {
-        "id": "3",
-        "nombre": "Kevin",
-        "apellido": "Provs",
-        "edad": "15",
-        "personalidad": "Creativo y optimista",
-        "historia": "Es un chico simpatico, apasionado del deporte, popular, parece el típico chico difícil de alcanzar, pero eso no tiene nada que ver con la realidad."
-    },
-    {
-        "id": "4",
-        "nombre": "Hanna",
-        "apellido": "Nakamura",
-        "edad": "16",
-        "personalidad": "Asertiva, reservada y amigable",
-        "historia": "Es una chica aparentemente muy seria, con pocos amigos y de actitud complicada."
+  {
+    "id": "1",
+    "nombre": "Christopher",
+    "apellido": "Tanaka",
+    "edad": "15",
+    "personalidad": "Alegre, trabajador y apasionado",
+    "historia": "Estudiante estrella de su clase, sus padres tienen muy claro su futuro y lo tienen todo planificado para que se cumplan sus deseos, pero el quería convertirse en chef y abrir su propio restaurante.",
+    "sprites": {
+      "neutra": {
+        "imagen": "assets/imagenes/sprites/Christopher/neutraG.png"
+      },
+      "feliz": {
+        "imagen": "assets/imagenes/sprites/Christopher/feliz.png"
+      },
+      "triste": {
+        "imagen": "assets/imagenes/sprites/Christopher/triste.png"
+      },
+      "molesta": {
+        "imagen": "assets/imagenes/sprites/Christopher/molesta.png"
+      },
+      "sorprendida": {
+        "imagen": "assets/imagenes/sprites/Christopher/sorprendida.png"
+      }
     }
-
+  },
+  {
+    "id": "2",
+    "nombre": "Mei",
+    "apellido": "Fidchet",
+    "edad": "15",
+    "personalidad": "Tímida y dulce",
+    "historia": "Acaba de llegar a la ciudad, es nueva en el instituto, desea ser diseñadora de moda y cuenta con grandes sueños.",
+    "sprites": {
+      "neutra": {
+        "imagen": "assets/imagenes/sprites/Mei/neutra.png"
+      },
+      "feliz": {
+        "imagen": "assets/imagenes/sprites/Mei/feliz.png"
+      },
+      "triste": {
+        "imagen": "assets/imagenes/sprites/Mei/triste.png"
+      },
+      "molesta": {
+        "imagen": "assets/imagenes/sprites/Mei/molesta.png"
+      },
+      "sorprendida": {
+        "imagen": "assets/imagenes/sprites/Mei/sorprendida.png"
+      }
+    }
+  },
+  {
+    "id": "3",
+    "nombre": "Kevin",
+    "apellido": "Provs",
+    "edad": "15",
+    "personalidad": "Creativo y optimista",
+    "historia": "Es un chico simpatico, apasionado del deporte, popular, parece el típico chico difícil de alcanzar, pero eso no tiene nada que ver con la realidad.",
+    "sprites": {
+      "neutra": {
+        "imagen": "assets/imagenes/sprites/Kevin/neutra.png"
+      },
+      "feliz": {
+        "imagen": "assets/imagenes/sprites/Kevin/feliz.png"
+      },
+      "triste": {
+        "imagen": "assets/imagenes/sprites/Kevin/triste.png"
+      },
+      "molesta": {
+        "imagen": "assets/imagenes/sprites/Kevin/molesta.png"
+      },
+      "sorprendida": {
+        "imagen": "assets/imagenes/sprites/Kevin/sorprendida.png"
+      }
+    }
+  },
+  {
+    "id": "4",
+    "nombre": "Hanna",
+    "apellido": "Nakamura",
+    "edad": "16",
+    "personalidad": "Asertiva, reservada y amigable",
+    "historia": "Es una chica aparentemente muy seria, con pocos amigos y de actitud complicada.",
+    "sprites": {
+      "neutra": {
+        "imagen": "assets/imagenes/sprites/Hanna/neutra.png"
+      },
+      "feliz": {
+        "imagen": "assets/imagenes/sprites/Hanna/feliz.png"
+      },
+      "triste": {
+        "imagen": "assets/imagenes/sprites/Hanna/triste.png"
+      },
+      "molesta": {
+        "imagen": "assets/imagenes/sprites/Hanna/molesta.png"
+      },
+      "sorprendida": {
+        "imagen": "assets/imagenes/sprites/Hanna/sorprendida.png"
+      }
+    }
+  }
 ]

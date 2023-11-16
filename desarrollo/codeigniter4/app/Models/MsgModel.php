@@ -20,14 +20,23 @@ class MsgModel extends Model
 
     public function guardarMensaje($id, $nick, $mensaje)
     {
+        $db = \Config\Database::connect();
+        $builder = $db->table('mensaje');
         $data = [
             'id_usuario' => $id,
             'remitente' => $nick,
             'texto' => $mensaje,
             'tipo' => "Mensaje",
         ];
-        prearray($data);
 
-        return $this->builder->insert($data);
+        return $builder->insert($data);
+    }
+
+    public function borrarMensaje($id)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('mensaje');
+
+        return $builder->where('id', $id)->delete();
     }
 }

@@ -1,6 +1,10 @@
 <div class="fondo_blanco">
 	<div class="seccion_ayuda">
-		<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
+		<?php if (isset($_SESSION["user"]["profile_image"]) && isset($_SESSION["user"]["url"])): ?>
+			<img class="img_wiki" src="<?=$_SESSION["user"]["url"]?>">
+		<?php else: ?>
+			<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
+		<?php endif; ?>
 		<input class="dato" type="text" value='<?php echo $_SESSION["user"]["nickname"]; ?>'
 		       placeholder="Nick"
 		       name="nick" id="nick" readonly>
@@ -13,9 +17,6 @@
 			echo "<div class='error'>".esc($msg)."</div>";
 		}
 		?>
-		<form method="get" action="http://localhost/perfil">
-			<input class="back_boton" name="menus" type="submit" value="VOLVER">
-		</form>
 		<form class="datos" action="http://localhost/delete" method="post">
 			<input class="dato" type="hidden" value='<?php echo $_SESSION["user"]["id"]; ?>' name="id" readonly>
 			<input class="dato" id="password" type="password" name="password"
