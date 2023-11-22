@@ -31,7 +31,7 @@ class ForoModel extends Model
         return $builder->insert($data);
     }
 
-    public function borrarMensaje($id)
+    public function borrarComentario($id)
     {
         $db = \Config\Database::connect();
         $builder = $db->table('comentario');

@@ -98,9 +98,7 @@ class Mensajes extends BaseController
         }
 
         $id = $this->request->getPostGet('id');
-        $password = $this->request->getPostGet('password');
 
-        // INTENTAMOS cambiar la contrasenia
         $deleteMensaje = $this->msgModel->borrarMensaje($id);
 
         // COMPROBAMOS Update

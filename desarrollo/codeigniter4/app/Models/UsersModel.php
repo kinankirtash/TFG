@@ -173,21 +173,41 @@ class UsersModel extends Model
         return $this->where('id', $id)->first();
     }
 
-    public function numPaginas()
+/*
+    public function obtenerUsuarioEmail($email)
     {
-        // Obtén el paginador actual
-        $pager = $this->pager;
-
-        // Si no hay datos o getTotal() devuelve null, no hay páginas
-        if (empty($pager) || $pager->getTotal() === null) {
-            return 0;
-        }
-
-        // Calcula el número total de páginas
-        $totalItems = $pager->getTotal();
-        $perPage = $pager->perPage();
-        $numPags = ceil($totalItems / $perPage);
-
-        return $numPags;
+        return $this->where('email', $email)->first();
     }
+
+    public function nuevaContrasenia($id, $password)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('usuario');
+        $hashContrasenia = password_hash($password, PASSWORD_BCRYPT);
+
+        $data = [
+            'contrasenia' => $hashContrasenia,
+            'temporal_pass' => null,
+        ];
+
+        $builder->where('id', $id);
+
+        return $builder->update($data);
+    }
+
+    public function temporalPass($email, $temporalPass)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('usuario');
+        $hashTemporalPass = password_hash($temporalPass, PASSWORD_BCRYPT);
+
+        $data = [
+            'temporal_pass' => $hashTemporalPass,
+        ];
+
+        $builder->where('email', $email);
+
+        return $builder->update($data);
+    }
+*/
 }

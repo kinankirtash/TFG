@@ -32,7 +32,8 @@
 											</form>
 											<?php if (session("user")['esAdmin']): ?>
 												<form action="http://localhost/borrarComentario" method="post">
-													<input name="id" type="hidden" value="<?=$comentario['id'];?>">
+													<input name="idComentario" type="hidden"
+													       value="<?=$comentario['id'];?>">
 													<input type="submit" value="Eliminar">
 												</form>
 											<?php endif; ?>

@@ -6,8 +6,10 @@ use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-    public string $fromEmail  = '';
-    public string $fromName   = '';
+    public string $fromEmail = '';
+
+    public string $fromName = '';
+
     public string $recipients = '';
 
     /**
@@ -28,6 +30,7 @@ class Email extends BaseConfig
     /**
      * SMTP Server Address
      */
+
     public string $SMTPHost = '';
 
     /**
@@ -82,7 +85,7 @@ class Email extends BaseConfig
     /**
      * Character set (utf-8, iso-8859-1, etc.)
      */
-    public string $charset = 'UTF-8';
+    public string $charset = 'iso-8859-1';
 
     /**
      * Whether to validate the email address

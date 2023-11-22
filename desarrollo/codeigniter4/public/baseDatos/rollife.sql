@@ -27,7 +27,7 @@ url varchar(255),
 avatar enum ('a','b')
 );
 ALTER TABLE usuario
-ADD avatar enum ('a','b');
+ADD temporal_pass varchar (255) default null;
 
 
 create table if not exists pretendiente (
@@ -72,7 +72,6 @@ primary key (id_capitulo, id_usuario),
 porcentaje int unsigned not null check (porcentaje <= 100),
 ultimoDialogo varchar (50) not null
 );
-drop TABLE jugado;
 
 create table if not exists relacion (
 id_pretendiente int unsigned,

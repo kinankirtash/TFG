@@ -20,6 +20,9 @@ $routes->post('control', 'wikiController::control');
 $routes->get('login', 'Users::login');
 $routes->post('login', 'Users::login');
 
+//$routes->get('olvide_contrasenia', 'Users::olvide_contrasenia');
+//$routes->post('olvide_contrasenia', 'Users::olvide_contrasenia');
+
 $routes->get('signUp', 'Users::signUp');
 $routes->post('signUp', 'Users::signUp');
 
@@ -58,6 +61,7 @@ $routes->post('verPerfil', 'Users::verOtroPerfil');
 $routes->post('denunciarComentario', 'Foro::denunciarComentario');
 $routes->post('denunciarUsuario', 'Users::denunciarUsuario');
 $routes->post('bloquearUsuario', 'Foro::bloquearUsuario');
+$routes->post('borrarComentario', 'Foro::borrarComentario');
 
 $routes->get('contacta', 'Mensajes::contacta');
 $routes->post('control_mensajes', 'Mensajes::control_mensajes');

@@ -3,31 +3,30 @@
     "id": 1,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "Este es un diálogo de introducción.",
-    "id_Npc": "1",
+    "texto": "EL inicio del nuevo curso va a ser complicado tras la desaparición de tu tía el año pasado. Parece que todo el mundo la ha olvidado, pero tú no, quieres saber que pasó...",
     "siguiente_dialogo": 2
   },
   {
     "id": 2,
     "id_capitulo": 1,
     "tipo": "pregunta",
-    "texto": "¿Qué camino tomarás?,",
-    "id_Pretendiente": "3",
-    "expresion": "neutra",
+    "texto": "Hola... Has llegado bastante pronto, ¿Cómo te encuentras? Es decir, la dirección del colegio quiere que actuemos como si nada hubiese pasado, pero yo no me olvido, asi que como tu tutor este año, puedes contar conmigo",
+    "id_Npc": "1",
     "opciones": [
       {
         "id": 2.1,
-        "texto": "Tomar el camino A, Christopher",
-        "id_afectado": 1,
-        "reaccion": "buena",
+        "texto": "No decir nada",
         "siguiente_dialogo": 3
       },
       {
         "id": 2.2,
-        "texto": "Tomar el camino B, Mei",
-        "id_afectado": 2,
-        "reaccion": "mala",
-        "siguiente_dialogo": 4
+        "texto": "Muchas gracias, lo tendré en cuenta",
+        "siguiente_dialogo": 3
+      },
+      {
+        "id": 2.3,
+        "texto": "Gracias, la verdad aún lo estoy procesando",
+        "siguiente_dialogo": 5
       }
     ]
   },
@@ -35,98 +34,29 @@
     "id": 3,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "Has elegido el camino A.",
-    "id_Npc": "1",
+    "texto": "Suena la alarma, para la primera clase.",
     "siguiente_dialogo": 5
   },
   {
     "id": 4,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "Has elegido el camino B.",
     "id_Npc": "1",
+    "texto": "Si no tienes muchas fuerzas, después de la presentación puedes quedarte aquí descansando",
     "siguiente_dialogo": 5
   },
   {
     "id": 5,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "Falta un dialogo más.",
+    "texto": "Consigues superar la primera clase con exito, pero no tienes fuerzas para mucho más, asi que te quedas sola cuando el resto van a la siguiente clase",
+    "siguiente_dialogo": 6
+  },
+  {
+    "id": 6,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
     "id_Npc": "2",
-    "siguiente_dialogo": 6
-  },
-  {
-    "id": 6,
-    "id_capitulo": 1,
-    "tipo": "dialogo",
-    "texto": "Dialogo final."
-  },
-
-
-  {
-    "id": 1,
-    "id_capitulo": 2,
-    "tipo": "dialogo",
-    "texto": "Este es un diálogo de introducción.",
-    "id_Pretendiente": "4",
-    "expresion": "neutra",
-    "siguiente_dialogo": 2
-  },
-  {
-    "id": 2,
-    "id_capitulo": 2,
-    "tipo": "pregunta",
-    "texto": "¿Qué camino tomarás?,",
-    "id_Pretendiente": "4",
-    "expresion": "feliz",
-    "opciones": [
-      {
-        "id": 2.1,
-        "texto": "Tomar el camino A, Christopher",
-        "id_afectado": 1,
-        "reaccion": "buena",
-        "siguiente_dialogo": 3
-      },
-      {
-        "id": 2.2,
-        "texto": "Tomar el camino B, Mei",
-        "id_afectado": 2,
-        "reaccion": "mala",
-        "siguiente_dialogo": 4
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "id_capitulo": 2,
-    "tipo": "dialogo",
-    "texto": "Has elegido el camino A.",
-    "id_Pretendiente": "4",
-    "expresion": "molesta",
-    "siguiente_dialogo": 5
-  },
-  {
-    "id": 4,
-    "id_capitulo": 2,
-    "tipo": "dialogo",
-    "texto": "Has elegido el camino B.",
-    "id_Pretendiente": "4",
-    "expresion": "triste",
-    "siguiente_dialogo": 5
-  },
-  {
-    "id": 5,
-    "id_capitulo": 2,
-    "tipo": "dialogo",
-    "texto": "Falta un dialogo más.",
-    "id_Pretendiente": "4",
-    "expresion": "sorprendida",
-    "siguiente_dialogo": 6
-  },
-  {
-    "id": 6,
-    "id_capitulo": 2,
-    "tipo": "dialogo",
-    "texto": "Dialogo final."
+    "texto": "Oh... Hola, pensé que esta clase estaría vacía"
   }
 ]

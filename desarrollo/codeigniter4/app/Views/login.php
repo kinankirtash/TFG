@@ -13,5 +13,11 @@
 			<input class="formulario" id="contrasenia" type="password" name="password" placeholder="Password">
 			<input type="submit" id="enviar" class="enviar" value="login" name="logueo">
 		</form>
+
+		<!--
+		<form class="formulario_sesion" method="post" action="http://localhost/olvide_contrasenia">
+			<input type="submit" id="forgot" class="enviar" value="Olvide la contraseña" name="forgot">
+		</form>
+		-->
 	</div>
 </div>

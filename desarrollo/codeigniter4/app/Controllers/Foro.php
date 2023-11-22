@@ -82,7 +82,6 @@ class Foro extends BaseController
         try {
             $this->foroModel->comentar($id, $nick, $mensaje);
             // Actualizar la altura de la tabla en la sesión
-            $this->actualizarAlturaTabla();
         } catch (\Exception $e) {
             $mensajeError = $e->getMessage();
             $response = 'Ha ocurrido algo imprevisto con el comentario: '.$mensajeError;
@@ -134,27 +133,20 @@ class Foro extends BaseController
 
             return template('perfil', $data);
         }
+        $idComentario = $this->request->getPost('idComentario');
 
-        //COMPROBAR SI EL BOTON TIENE VALOR
-        if (! $this->request->getPostGet('deleteMsg')) {
-            $data['error'] = false;
+        $response = '';
+
+        // Guarda el mensaje en la base de datos
+        try {
+            $this->foroModel->borrarComentario($idComentario);
+            // Actualizar la altura de la tabla en la sesión
+        } catch (\Exception $e) {
+            $mensajeError = $e->getMessage();
+            $response = 'Ha ocurrido algo imprevisto con la eliminación del comentario: '.$mensajeError;
         }
 
-        $id = $this->request->getPostGet('id');
-        $password = $this->request->getPostGet('password');
-
-        // INTENTAMOS cambiar la contrasenia
-        $deleteMensaje = $this->msgModel->borrarMensaje($id);
-
-        // COMPROBAMOS Update
-        if (! $deleteMensaje) {
-            $data['msg'] = 'Ha ocurrido algo imprevisto durante la eliminación';
-
-            return template('eliminarCuenta', $data);
-        }
-        $data['msg'] = 'El mensaje ha sido eliminada con éxito';
-
-        return $this->control_mensajes();
+        return $this->foro($response);
     }
 
     public function bloquearUsuario()

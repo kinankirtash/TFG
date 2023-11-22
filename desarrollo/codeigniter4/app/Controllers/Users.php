@@ -157,6 +157,13 @@ class Users extends BaseController
         return ($usuarioExist);
     }
 
+    public function seleccionarUsuarioEmail($email)
+    {
+        $usuarioExist = $this->userModel->obtenerUsuarioEmail($email);
+
+        return ($usuarioExist);
+    }
+
     public function logOut()
     {
         session_destroy();
@@ -536,6 +543,138 @@ class Users extends BaseController
     }
 
 
+/*
+    public function olvide_contrasenia()
+    {
+        // DATA DEBUG
+        $data = [
+            'error' => true,
+            'msg' => "Rellena todos los campos",
+        ];
+
+        if (session("user")) {
+            $data['msg'] = "Ya tienes una sesión iniciada";
+
+            return template('perfil', $data);
+        }
+
+        //COMPROBAR SI EL BOTON TIENE VALOR
+        if (! $this->request->getPostGet('enviarCorreo')) {
+            $data['error'] = false;
+        }
+
+        //VARIABLES REQUEST
+        $emailToSend = $this->request->getPostGet('email');
+
+        // COMPROBAMOS QUE TODOS LOS CAMPOS ESTEN RELLENOS
+        if (empty($emailToSend)) {
+            $data['form'] = [$emailToSend];
+            $data['empty'] = isEmpty($emailToSend);
+
+            return template('olvidoContrasenia', $data);
+        }
+
+        //SELECCIONAMOS EL USUARIO
+        if ($this->seleccionarUsuarioEmail($emailToSend)) {
+            $result = $this->seleccionarUsuarioEmail($emailToSend);
+            if ($result['deleted'] == 0 && $result['acceso'] == 1) {
+
+                $temporalPass = $this->generarTemporalPass();
+                $generarTemporalPass = $this->userModel->temporalPass($emailToSend, $temporalPass);
+
+                if (! $generarTemporalPass) {
+                    $data['msg'] = 'Ha ocurrido algo imprevisto generando su pase temporal';
+
+                    return template('olvidoContrasenia', $data);
+                }
+
+                $email = \Config\Services::email();
+
+                $email->setFrom('1998maoc@gmail.com');
+                $email->setTo('maoc1998@gmail.com');
+                //$email->setCC('another@another-example.com');
+                //$email->setBCC('them@their-example.com');
+
+                $email->setSubject('Email Test');
+                $email->setMessage('Testing the email class.'.$temporalPass);
+
+                if (! $email->send()) {
+                    $data['msg'] = 'Ha ocurrido algo inesperado enviando su pase temporal.'.$email->printDebugger(['headers']);;
+
+                    return template('olvidoContrasenia', $data);
+                }
+                $data['msg'] = 'Se le ha enviado su pase temporal, revise su email';
+
+                return template('login', $data);
+            } else {
+                $data['msg'] = 'No puedes acceder con esta cuenta';
+
+                return template('olvidoContrasenia', $data);
+            }
+        } else {
+            $data['msg'] = 'Alguno de los datos es erróneo';
+
+            return template('olvidoContrasenia', $data);
+        }
+    }
+
+    public function newPassword()
+    {
+        $data = [
+            'error' => true,
+            'msg' => "Debes introducir la contraseña",
+        ];
+        if (! session("user")) {
+            $data['msg'] = "Debes iniciar sesión";
+
+            return template('login', $data);
+        }
+        if (! session("user")['temporal_pass']) {
+            $data['msg'] = "No has olvidado la contraseña";
+
+            return template('perfil', $data);
+        }
+        //COMPROBAR SI EL BOTON TIENE VALOR
+        if (! $this->request->getPostGet('newPass')) {
+            $data['error'] = false;
+        }
+
+        $id = $this->request->getPostGet('id');
+        $password = $this->request->getPostGet('password');
+
+        if (session("user")['temporal_pass']) {
+            // INTENTAMOS cambiar la contrasenia
+            $updateUser = $this->userModel->nuevaContrasenia($id, $password);
+
+            // COMPROBAMOS Update
+            if (! $updateUser) {
+                $data['msg'] = 'Ha ocurrido algo imprevisto durante la actualización';
+
+                return template('nuevaContrasenia', $data);
+            }
+            $data['msg'] = 'Se ha actualizado contraseña, Inicia sesión';
+        }
+
+        session_destroy();
+        session_start();
+
+        return template('login', $data);
+    }
+
+    public function generarTemporalPass()
+    {
+        $letras = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $numeros = '0123456789';
+
+        // Mezcla las letras y los números
+        $cadenaAleatoria = str_shuffle($letras.$numeros);
+
+        // Toma los primeros 4 caracteres como letras y los siguientes 2 como números
+        $temporalPass = substr($cadenaAleatoria, 0, 4).substr($cadenaAleatoria, 4, 2);
+
+        return $temporalPass;
+    }
+*/
 }
 
 

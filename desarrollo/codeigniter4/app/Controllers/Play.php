@@ -251,10 +251,12 @@ class Play extends BaseController
             }
         }
         if ($opcionElegida !== null) {
-            $idAfectado = $opcionElegida['id_afectado'];
-            $reaccion = $opcionElegida['reaccion'];
-            $pretendiente = $this->pretendienteModel->obtenerPretendiente($idAfectado);
-            $this->relacionModel->actualizarRelacionPretendiente($idUsuario, $pretendiente, $reaccion);
+            if (isset($opcionElegida['id_afectado']) && isset($opcionElegida['id_afectado'])) {
+                $idAfectado = $opcionElegida['id_afectado'];
+                $reaccion = $opcionElegida['reaccion'];
+                $pretendiente = $this->pretendienteModel->obtenerPretendiente($idAfectado);
+                $this->relacionModel->actualizarRelacionPretendiente($idUsuario, $pretendiente, $reaccion);
+            }
         }
 
         return template('jugarCapitulo', $data);
