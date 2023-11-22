@@ -24,7 +24,7 @@
     --black: #23221E;
     --grey1: #C7C7C7;
     --bl-to-pk: linear-gradient(to right, #CDFFFF, #FFCDCD);
-    --trasnparent-White: rgba(242, 246, 228, .4);
+    --trasnparent-White: rgba(255, 251, 251, 0.8);
     --bl-to-pk-top: linear-gradient(#FFCDCD, #CDFFFF, #FFCDCD);
 
 }
@@ -598,7 +598,7 @@ h1 {
 }
 
 .personaje {
-    height: 33em;
+    height: 30em;
     display: inline-block;
     vertical-align: middle;
 }

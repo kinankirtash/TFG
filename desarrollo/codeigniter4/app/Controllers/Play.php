@@ -251,7 +251,7 @@ class Play extends BaseController
             }
         }
         if ($opcionElegida !== null) {
-            if (isset($opcionElegida['id_afectado']) && isset($opcionElegida['id_afectado'])) {
+            if (isset($opcionElegida['id_afectado']) && isset($opcionElegida['reaccion'])) {
                 $idAfectado = $opcionElegida['id_afectado'];
                 $reaccion = $opcionElegida['reaccion'];
                 $pretendiente = $this->pretendienteModel->obtenerPretendiente($idAfectado);

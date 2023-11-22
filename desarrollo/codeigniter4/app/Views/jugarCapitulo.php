@@ -33,12 +33,11 @@
 						       name="siguiente_dialogo" readonly>
 					<?php endif;
 				endif; ?>
-				<br>
 				<?php if (! empty($opciones_respuesta)) :
 					foreach ($opciones_respuesta as $opcion) :
 						?>
-						<input class="dato" type="hidden" value='<?=$dialogo_actual['id'];?>'
-						       name="pregunta" readonly>
+						<br><input class="dato" type="hidden" value='<?=$dialogo_actual['id'];?>'
+						           name="pregunta" readonly>
 						<input class="dato" type="hidden" value='<?=$opcion['id'];?>'
 						       name="id_Opcion" readonly>
 						<input type="radio" name="respuesta" value="<?=$opcion['id']?>" required>

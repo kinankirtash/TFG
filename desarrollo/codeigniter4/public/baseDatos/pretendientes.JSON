@@ -1,26 +1,26 @@
 [
   {
     "id": "1",
-    "nombre": "Christopher",
+    "nombre": "Nathan",
     "apellido": "Tanaka",
     "edad": "15",
     "personalidad": "Alegre, trabajador y apasionado",
     "historia": "Estudiante estrella de su clase, sus padres tienen muy claro su futuro y lo tienen todo planificado para que se cumplan sus deseos, pero el quería convertirse en chef y abrir su propio restaurante.",
     "sprites": {
       "neutra": {
-        "imagen": "assets/imagenes/sprites/Christopher/neutraG.png"
+        "imagen": "assets/imagenes/sprites/Nathan/neutraG.png"
       },
       "feliz": {
-        "imagen": "assets/imagenes/sprites/Christopher/feliz.png"
+        "imagen": "assets/imagenes/sprites/Nathan/feliz.png"
       },
       "triste": {
-        "imagen": "assets/imagenes/sprites/Christopher/triste.png"
+        "imagen": "assets/imagenes/sprites/Nathan/triste.png"
       },
       "molesta": {
-        "imagen": "assets/imagenes/sprites/Christopher/molesta.png"
+        "imagen": "assets/imagenes/sprites/Nathan/molesta.png"
       },
       "sorprendida": {
-        "imagen": "assets/imagenes/sprites/Christopher/sorprendida.png"
+        "imagen": "assets/imagenes/sprites/Nathan/sorprendida.png"
       }
     }
   },
