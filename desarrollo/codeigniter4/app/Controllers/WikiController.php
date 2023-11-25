@@ -18,7 +18,7 @@ class WikiController extends BaseController
         $this->relacionModel = new UsersPretModel();
     }
 
-    public function index()
+    public function wiki()
     {
         return template('wikiOpciones');
     }
