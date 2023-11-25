@@ -64,7 +64,7 @@
 		</form>
 		<form class="datos" method="post" onsubmit="generarPdf(); return false;">
 			<div class="botones2">
-				<input class="boton" type="submit" name="delete_User" value="Descargar Informe">
+				<input class="boton" type="submit" name="delete_User" value="Descargar datos">
 			</div>
 		</form>
 	</div>
@@ -98,7 +98,7 @@
 		doc.text(20, 70, telefono);
 		doc.text(20, 80, email);
 		doc.text(20, 90, edad);
-		
+
 		doc.save('perfil.pdf');
 	}
 </script>
