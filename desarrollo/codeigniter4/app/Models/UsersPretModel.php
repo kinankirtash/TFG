@@ -36,6 +36,10 @@ class UsersPretModel extends Model
     {
         return $this->where('id_usuario', $id)->where('id_pretendiente', $idPretendiente)->first();
     }
+    public function obtenerRelacionesUser($id)
+    {
+        return $this->where('id_usuario', $id);
+    }
 
     public function actualizarRelacionPretendiente($id, $pretendiente, $reaccion)
     {
