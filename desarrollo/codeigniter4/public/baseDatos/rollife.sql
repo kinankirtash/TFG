@@ -1,13 +1,5 @@
-drop database if exists rollife;
-drop user if exists moonChild;
--- por fallo de usuario existente
-
 create database rollife;
 use rollife;
-
-create user 'moonChild' identified by 'moonChild';
-grant all privileges on rollife.*to desarrollador;
-
 
 create table if not exists usuario (
 id int unsigned primary key auto_increment,
@@ -24,11 +16,9 @@ contrasenia varchar (255) not null,
 deleted tinyint (1) not null default 0,
 profile_image varchar(255),
 url varchar(255),
-avatar enum ('a','b')
+avatar enum ('a','b'),
+temporal_pass varchar (255) default null
 );
-ALTER TABLE usuario
-ADD temporal_pass varchar (255) default null;
-
 
 create table if not exists pretendiente (
 id int unsigned primary key auto_increment,
@@ -44,7 +34,7 @@ remitente varchar (50),
 texto varchar (1500) not null
 );
 
-drop table mensaje;
+
 create table if not exists mensaje (
 id int unsigned primary key auto_increment,
 id_usuario int unsigned,

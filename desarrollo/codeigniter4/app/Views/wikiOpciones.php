@@ -4,7 +4,7 @@
 			<div class="content">
 				<ul class="wiki">
 					<li>
-						<form method="get" action="http://localhost/pretendientes" data-tipo="pretendientes">
+						<form method="get" action="/pretendientes" data-tipo="pretendientes">
 							<div class="wikiOption Pretendientes" onclick="submitForm();">
 								<input type="hidden" name="tipo" value="pretendientes">
 								<h4 class="nOpcion">PRETENDIENTES</h4>
@@ -12,7 +12,7 @@
 						</form>
 					</li>
 					<li>
-						<form method="get" action="http://localhost/personajes" data-tipo="personajes">
+						<form method="get" action="/personajes" data-tipo="personajes">
 							<div class="wikiOption Personajes" onclick="submitForm();">
 								<input type="hidden" name="tipo" value="personajes">
 								<h4 class="nOpcion" onclick="submitForm();">PERSONAJES</h4>
@@ -20,7 +20,7 @@
 						</form>
 					</li>
 					<li>
-						<form method="get" action="http://localhost/lugares" data-tipo="lugares">
+						<form method="get" action="/lugares" data-tipo="lugares">
 							<div class="wikiOption Lugares" onclick="submitForm();">
 								<input type="hidden" name="tipo" value="lugares">
 								<h4 class="nOpcion" onclick="submitForm();">LUGARES</h4>

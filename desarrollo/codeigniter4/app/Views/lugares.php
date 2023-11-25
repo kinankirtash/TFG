@@ -18,7 +18,7 @@
 						<?=$lugar['nombre'];?>
 					</td>
 					<td>
-						<form action="http://localhost/verLugar" method="post">
+						<form action="/verLugar" method="post">
 							<input class="dato" type="hidden" value='<?=$lugar['id'];?>' name="id" readonly>
 							<input class="boton" type="submit" name="look" value="Ver">
 						</form>

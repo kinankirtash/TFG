@@ -31,7 +31,7 @@
 												<input type="submit" value="Ver perfil">
 											</form>
 											<?php if (session("user")['esAdmin']): ?>
-												<form action="http://localhost/borrarComentario" method="post">
+												<form action="/borrarComentario" method="post">
 													<input name="idComentario" type="hidden"
 													       value="<?=$comentario['id'];?>">
 													<input type="submit" value="Eliminar">

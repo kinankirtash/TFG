@@ -14,7 +14,7 @@
 <body>
 <header>
 	<nav class="navbar">
-		<form method="get" action="http://localhost/" data-tipo="">
+		<form method="get" action="/" data-tipo="">
 			<div class="marca" onclick="submitForm();">
 				<img class="logo" src="assets/logo/logo_no_flores2.png">
 				<h1 class="rolleaf"><input type="submit" class="name" name="name" value="">

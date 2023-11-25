@@ -17,7 +17,7 @@
 			echo "<div class='error'>".esc($msg)."</div>";
 		}
 		?>
-		<form class="contrasenias" action="http://localhost/newPassword" method="post">
+		<form class="contrasenias" action="/newPassword" method="post">
 			<input class="dato" id="password" type="password" name="password"
 			       placeholder="Nueva contraseña Minimo 6 caracteres"
 			       onblur="validatePassword('password')" onchange="validatePassword('password')" required>

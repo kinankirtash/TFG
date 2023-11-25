@@ -34,7 +34,7 @@
 						<?php endif; ?><?php endforeach; ?>
 						<label>%)</label>
 					</div>
-					<form action="http://localhost/jugarCapitulo" method="post">
+					<form action="/jugarCapitulo" method="post">
 						<input class="dato" type="hidden" value='<?=$capitulo['id'];?>' name="id" readonly>
 						<input class="boton" type="submit" name="jugar" value="Jugar Capitulo">
 					</form>

@@ -32,7 +32,7 @@
 										checked
 									<?php } ?> disabled>
 							<br>
-							<form action="http://localhost/esAdmin" method="post">
+							<form action="/esAdmin" method="post">
 								<input class="dato" type="hidden" value='<?=$usuario['id'];?>' name="id" readonly>
 								<input class="dato" type="hidden" value='<?=$usuario['esAdmin'];?>' name="esAdmin"
 								       readonly>
@@ -45,14 +45,14 @@
 										checked
 									<?php } ?> disabled>
 							<br>
-							<form action="http://localhost/acceso" method="post">
+							<form action="/acceso" method="post">
 								<input class="dato" type="hidden" value='<?=$usuario['id'];?>' name="id" readonly>
 								<input class="dato" type="hidden" value='<?=$usuario['acceso'];?>' name="acceso"
 								       readonly>
 								<input class="boton" type="submit" name="nivelAcceso" value="Change">
 							</form>
 						<td>
-							<form action="http://localhost/deleteUser" method="post">
+							<form action="/deleteUser" method="post">
 								<input class="dato" type="hidden" value='<?=$usuario['id'];?>' name="id" readonly>
 								<input class="boton" type="submit" name="delete" value="Eliminar Usuario">
 							</form>

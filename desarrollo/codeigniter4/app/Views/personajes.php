@@ -19,7 +19,7 @@
 					</td>
 					<td><?=$npc['apellido'];?></td>
 					<td>
-						<form action="http://localhost/verPersonaje" method="post">
+						<form action="/verPersonaje" method="post">
 							<input class="dato" type="hidden" value='<?=$npc['id'];?>' name="id" readonly>
 							<input class="boton" type="submit" name="look" value="Ver">
 						</form>

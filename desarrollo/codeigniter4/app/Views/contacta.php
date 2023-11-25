@@ -11,7 +11,7 @@
 				<?php if (isset($msg)) {
 					echo "<div class='error'>".esc($msg)."</div><br>";
 				} ?>
-				<form action="http://localhost/guardarmensajes" method="post">
+				<form action="/guardarmensajes" method="post">
 					<textarea id="mensaje" name="mensaje" class="mensaje"></textarea>
 					<br>
 					<input class="botonFlotante" type="submit" value="Enviar">

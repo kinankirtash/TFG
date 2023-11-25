@@ -24,7 +24,7 @@
 						<td><?=$mensaje['tipo'];?></td>
 						<td class="txt"><?=$mensaje['texto'];?></td>
 						<td>
-							<form action="http://localhost/deleteMsg" method="post">
+							<form action="/deleteMsg" method="post">
 								<input class="dato" type="hidden" value='<?=$mensaje['id'];?>' name="id" readonly>
 								<input class="boton" type="submit" name="deleteMsg" value="Eliminar Mensaje">
 							</form>

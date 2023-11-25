@@ -1,5 +1,5 @@
 <div class="fondo_blanco">
-	<form action="http://localhost/saveAvatar" method="post">
+	<form action="/saveAvatar" method="post">
 		<div class="elegirAvatar">
 			<div class="opcionAvatar">
 				<label for="opcionA">

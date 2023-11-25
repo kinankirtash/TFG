@@ -13,7 +13,7 @@ if (! session("user")) { ?>
 		<br>
 		<div class="modal-content">
 			<img class="logoDeco" src="assets/logo/logo_B.png">
-			<form id="registro" class="formulario_sesion registro" method="post" action="http://localhost/signUp">
+			<form id="registro" class="formulario_sesion registro" method="post" action="/signUp">
 				<input class="formulario" id="nombre" type="text" name="nombre" placeholder="Nombre" required>
 				<input class="formulario" id="nickname" type="text" name="nick" placeholder="Nickname" required>
 				<input class="formulario" id="email" type="email" name="email" placeholder="tuemail@email.com"

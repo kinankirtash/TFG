@@ -20,7 +20,7 @@
 						</td>
 						<td><?=$pretendiente['apellido'];?></td>
 						<td>
-							<form action="http://localhost/verPretendiente" method="post">
+							<form action="/verPretendiente" method="post">
 								<input class="dato" type="hidden" value='<?=$pretendiente['id'];?>' name="id" readonly>
 								<input class="boton" type="submit" name="look" value="Ver">
 							</form>

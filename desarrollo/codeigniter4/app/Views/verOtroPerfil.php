@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<br>
-		<form class="datos" action="http://localhost/denunciarUsuario" method="post">
+		<form class="datos" action="/denunciarUsuario" method="post">
 			<div class="botones">
 				<input name="usuario" type="hidden" value="<?=$usuario['nickname'];?>">
 				<input name="id" type="hidden" value="<?=$usuario['id'];?>">
@@ -50,7 +50,7 @@
 				       onclick="return confirm('¿Realmente desea denunciar este Usuario?');">
 			</div>
 		</form>
-		<form class="datos" action="http://localhost/bloquearUsuario" method="post">
+		<form class="datos" action="/bloquearUsuario" method="post">
 			<div class="botones">
 				<input name="id" type="hidden" value="<?=$usuario['id'];?>">
 				<input class="boton" type="submit" name="update" value="Bloquear"

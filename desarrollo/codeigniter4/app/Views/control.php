@@ -4,7 +4,7 @@
 			<div class="content">
 				<ul class="wiki">
 					<li>
-						<form method="get" action="http://localhost/control_usuarios">
+						<form method="get" action="/control_usuarios">
 							<div class="controlOption Usuarios" onclick="submitForm();">
 								<input type="hidden" name="tipo" value="pretendientes">
 								<h4 class="nOpcion">USUARIOS</h4>
@@ -12,7 +12,7 @@
 						</form>
 					</li>
 					<li>
-						<form method="get" action="http://localhost/control_mensajes">
+						<form method="get" action="/control_mensajes">
 							<div class="controlOption Mensajes" onclick="submitForm();">
 								<input type="hidden" name="tipo" value="mensajes">
 								<h4 class="nOpcion" onclick="submitForm();">MENSAJES</h4>

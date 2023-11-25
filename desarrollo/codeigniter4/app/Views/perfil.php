@@ -14,7 +14,7 @@
 			echo "<div class='error'>".esc($msg)."</div>";
 		}
 		?>
-		<form class="datos" action="http://localhost/update" method="post" enctype="multipart/form-data">
+		<form class="datos" action="/update" method="post" enctype="multipart/form-data">
 			<input class="dato" type="hidden" value='<?php echo $_SESSION["user"]["id"]; ?>' name="id" readonly>
 			<input class="dato" type="text" value='<?php echo $_SESSION["user"]["nickname"]; ?>'
 			       placeholder="Nick"
@@ -52,12 +52,12 @@
 			</div>
 		</form>
 		<br>
-		<form class="datos" action="http://localhost/updatePassword" method="post">
+		<form class="datos" action="/updatePassword" method="post">
 			<div class="botones2">
 				<input class="boton" type="submit" name="change_password" value="Cambiar contraseña">
 			</div>
 		</form>
-		<form class="datos" action="http://localhost/delete" method="post">
+		<form class="datos" action="/delete" method="post">
 			<div class="botones2">
 				<input class="boton" type="submit" name="delete_User" value="Eliminar Cuenta">
 			</div>

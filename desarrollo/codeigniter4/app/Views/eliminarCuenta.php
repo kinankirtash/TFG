@@ -17,7 +17,7 @@
 			echo "<div class='error'>".esc($msg)."</div>";
 		}
 		?>
-		<form class="datos" action="http://localhost/delete" method="post">
+		<form class="datos" action="/delete" method="post">
 			<input class="dato" type="hidden" value='<?php echo $_SESSION["user"]["id"]; ?>' name="id" readonly>
 			<input class="dato" id="password" type="password" name="password"
 			       placeholder="Contraseña"

@@ -17,7 +17,7 @@
 			echo "<div class='error'>".esc($msg)."</div>";
 		}
 		?>
-		<form class="contrasenias" action="http://localhost/updatePassword" method="post">
+		<form class="contrasenias" action="/updatePassword" method="post">
 			<input class="dato" type="hidden" value='<?php echo $_SESSION["user"]["id"]; ?>' name="id" readonly>
 			<input class="dato" type="password" placeholder="Contraseña actual" id="oldPassword"
 			       name="oldPassword" required>
