@@ -249,6 +249,14 @@ class Users extends BaseController
             $data['error'] = true;
         }
 
+        $data['relaciones'] = $this->relacionModel->where('id_usuario', session("user")['id'])->findAll();
+        $data['porcentajes'] = $this->jugadoModel->where('id_usuario', session("user")['id'])->findAll();
+
+        $path = 'baseDatos/pretendientes.JSON';
+        $jsonString = file_get_contents($path);
+        $pretendientes = json_decode($jsonString, true);
+        $data['pretendientes'] = $pretendientes;
+
         return template('perfil', $data);
     }
 
@@ -542,7 +550,6 @@ class Users extends BaseController
 
         return $this->verOtroPerfil($response, $idUsuario);
     }
-
     /*
         public function olvide_contrasenia()
         {

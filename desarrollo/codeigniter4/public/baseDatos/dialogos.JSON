@@ -31,7 +31,7 @@
     "id": 5,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "Shh... silencio... *El murmullo desaparece* Hoy tenemos que dar la bienvenida a un nuevo alumno que acaba de transferirse a nuestro instituto...",
+    "texto": "Shh... silencio... *El murmullo desaparece* Hoy tenemos que dar la bienvenida a un nuevo integrante en nuestra clase que acaba de transferirse al instituto...",
     "id_Npc": "1",
     "siguiente_dialogo": 6
   },
@@ -108,7 +108,7 @@
     "tipo": "dialogo",
     "id_Pretendiente": "1",
     "expresion": "feliz",
-    "texto": "*Habla muy bajito casi susurrando, pero muy ilusionado* HOlA!!! No me dijiste que ibas a cambiarte a mni instituto, podría haberte esperado para venir juntos...",
+    "texto": "*Habla muy bajito casi susurrando, pero muy ilusionado* HOLA!!! No me dijiste que ibas a cambiarte a mi instituto, podría haberte esperado para venir juntos...",
     "siguiente_dialogo": 10
   },
   {
@@ -196,24 +196,24 @@
     "siguiente_dialogo": 19
   },
   {
-    "id": 18,
+    "id": 19,
     "id_capitulo": 1,
     "tipo": "dialogo",
     "id_Npc": "2",
     "texto": "*Sabes quién es alguna vez la viste junto a tu tía en el pasado...*",
-    "siguiente_dialogo": 19
+    "siguiente_dialogo": 20
   },
   {
-    "id": 19,
+    "id": 20,
     "id_capitulo": 1,
     "tipo": "pregunta",
     "id_Npc": "2",
-    "texto": "Espera tu cara me suena... Ah claro eres su sobrina, no sabía que ahora venías a este centro...",
+    "texto": "Espera tu cara me suena... Ah claro vi alguna foto tuya en casa de tu tía Miku, no sabía que ahora venías a este centro...",
     "opciones": [
       {
         "id": 18.1,
         "texto": "Preguntarle directamente si sabe algo de tu tía.",
-        "siguiente_dialogo": 20
+        "siguiente_dialogo": 21
       },
       {
         "id": 18.2,
@@ -223,75 +223,66 @@
       {
         "id": 18.3,
         "texto": "Ser sincera y contarle por qué estás aquí.",
-        "siguiente_dialogo": 21
+        "siguiente_dialogo": 23
       },
       {
         "id": 18.3,
         "texto": "Responder amablemente evitando el tema de tu tía.",
-        "siguiente_dialogo": 23
+        "siguiente_dialogo": 24
       }
     ]
-  },
-  {
-    "id": 20,
-    "id_capitulo": 1,
-    "tipo": "dialogo",
-    "id_Npc": "2",
-    "texto": "Oh... Eeeeh *Mira a ambos lados antes de decir nada* Si de verdad estás aquí por eso, deberías marcharte, no es buena idea que sigas por este camino",
-    "siguiente_dialogo": 24
   },
   {
     "id": 21,
     "id_capitulo": 1,
     "tipo": "dialogo",
     "id_Npc": "2",
-    "texto": "Oh... Eeeeh *Mira a ambos lados antes de decir nada* Desearía poder ayudarte, pero te estas metiendo en algo peligroso",
-    "siguiente_dialogo": 24
-  },
-  {
-    "id": 22,
-    "id_capitulo": 1,
-    "tipo": "dialogo",
-    "texto": "*Tras pedir perdón por haberte quedado en este aula, te marchas*",
-    "siguiente_dialogo": 26
+    "texto": "Oh... Eeeeh *Mira a ambos lados antes de decir nada* Si de verdad estás aquí por eso, deberías marcharte, no es buena idea que sigas por este camino",
+    "siguiente_dialogo": 25
   },
   {
     "id": 23,
     "id_capitulo": 1,
     "tipo": "dialogo",
     "id_Npc": "2",
-    "texto": "Bueno, creo que Davitsu ahora está ocupado, deberías marcharte a tu siguiente clase.",
+    "texto": "Oh... Eeeeh *Mira a ambos lados antes de decir nada* Desearía poder ayudarte, pero te estas metiendo en algo peligroso",
     "siguiente_dialogo": 25
+  },
+  {
+    "id": 22,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
+    "texto": "*Tras pedir perdón por haberte quedado en este aula, te marchas*",
+    "siguiente_dialogo": 27
   },
   {
     "id": 24,
     "id_capitulo": 1,
     "tipo": "dialogo",
     "id_Npc": "2",
-    "texto": "Sin embargo, no creo que te vayas a rendir tan fácilmente... Creo que tu tía, tenía una serie de alumnos con los que tenía más afinidad, a lo mejor podrías preguntarles a ellos si saben algo, no puedo decirte mucho más, ya sabes que tu tía era muy reservada con sus cosas...",
-    "siguiente_dialogo": 25
+    "texto": "Bueno, creo que Davitsu ahora está ocupado, deberías marcharte a tu siguiente clase.",
+    "siguiente_dialogo": 26
   },
   {
     "id": 25,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "*Le das la gracias y te marchas*",
+    "id_Npc": "2",
+    "texto": "Sin embargo, no creo que te vayas a rendir tan fácilmente... Creo que tu tía, tenía una serie de alumnos con los que tenía más afinidad, a lo mejor podrías preguntarles a ellos si saben algo, no puedo decirte mucho más, ya sabes que tu tía era muy reservada con sus cosas...",
     "siguiente_dialogo": 26
   },
   {
     "id": 26,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "texto": "*Aún no te conoces el centro, así que te pierdes buscando tu siguiente aula, decides entrar en una buscando a la gente de tu clase y de repente chocas con alguien*",
+    "texto": "*Le das la gracias y te marchas*",
     "siguiente_dialogo": 27
   },
   {
     "id": 27,
     "id_capitulo": 1,
     "tipo": "dialogo",
-    "id_Pretendiente": "4",
-    "expresion": "molesta",
-    "texto": "Agggh tén más cuidado de por donde vás, es que no tienes ojos en la cara o qué?!?",
+    "texto": "*Aún no te conoces el centro, así que te pierdes buscando tu siguiente aula, decides entrar en una buscando a la gente de tu clase y de repente chocas con alguien*",
     "siguiente_dialogo": 28
   },
   {
@@ -299,8 +290,8 @@
     "id_capitulo": 1,
     "tipo": "dialogo",
     "id_Pretendiente": "4",
-    "expresion": "neutra",
-    "texto": "No te había visto antes, ¿acabas de llegar?",
+    "expresion": "molesta",
+    "texto": "Agggh tén más cuidado de por donde vás, es que no tienes ojos en la cara o qué?!?",
     "siguiente_dialogo": 29
   },
   {
@@ -309,7 +300,7 @@
     "tipo": "dialogo",
     "id_Pretendiente": "4",
     "expresion": "neutra",
-    "texto": "Bueno... da igual, tú ten más cuidado la próxima vez, además esta no es tu clase, creo que es la de enfrente...",
+    "texto": "No te había visto antes, ¿acabas de llegar?",
     "siguiente_dialogo": 30
   },
   {
@@ -318,13 +309,31 @@
     "tipo": "dialogo",
     "id_Pretendiente": "4",
     "expresion": "neutra",
-    "texto": "Por cierto me llamo Hanna... *Te saca de la clase y cierra la puerta tras de tí*",
+    "texto": "Bueno... da igual, tú ten más cuidado la próxima vez, además esta no es tu clase, creo que es la de enfrente...",
     "siguiente_dialogo": 31
   },
   {
     "id": 31,
     "id_capitulo": 1,
     "tipo": "dialogo",
+    "id_Pretendiente": "4",
+    "expresion": "neutra",
+    "texto": "Por cierto me llamo Hanna... *Te saca de la clase y cierra la puerta tras de tí*",
+    "siguiente_dialogo": 32
+  },
+  {
+    "id": 32,
+    "id_capitulo": 1,
+    "tipo": "dialogo",
     "texto": "HAS COMPLETADO EL PRIMER CAPÍTULO"
+  },
+
+
+  {
+    "id": 1,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Un nuevo curso ha comenzado y sabes que este comienzo va a ser más duro... ",
+    "siguiente_dialogo": 2
   }
 ]

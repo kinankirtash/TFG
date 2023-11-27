@@ -1,6 +1,7 @@
 <div class="fondo_blanco">
 	<div class="seccion_ayuda">
-		<?php if (isset($_SESSION["user"]["profile_image"]) && isset($_SESSION["user"]["url"])): ?>
+		<?php
+		if (isset($_SESSION["user"]["profile_image"]) && isset($_SESSION["user"]["url"])): ?>
 			<img id="imagen" class="img_wiki" src="<?=$_SESSION["user"]["url"]?>">
 		<?php else: ?>
 			<img class="img_perfil" src="assets/imagenes/Siluetas/silueta3.png">
@@ -64,7 +65,7 @@
 		</form>
 		<form class="datos" method="post" onsubmit="generarPdf(); return false;">
 			<div class="botones2">
-				<input class="boton" type="submit" name="delete_User" value="Descargar datos">
+				<input class="boton" type="submit" name="delete_User" value="Descargar Informe">
 			</div>
 		</form>
 	</div>
@@ -75,9 +76,14 @@
 		// Crear instancia de jsPDF
 		var doc = new jsPDF();
 
-		// Agregar texto al PDF
-		doc.setFont("helvetica");
-		doc.setFontSize(14);
+		// Establecer color de fondo
+		doc.setFillColor(253, 243, 243); // Relleno de color azul claro
+		doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
+
+		doc.setFont("Playfair Display");
+		doc.setTextColor(223, 147, 186);
+		doc.setFontSize(16);
+		doc.setFontType("bold");
 		doc.text(20, 20, 'INFORMACIÓN DEL PERFIL');
 
 		// Obtener información del perfil
@@ -90,16 +96,52 @@
 		var edad = 'Edad: ' + '<?php echo $_SESSION["user"]["edad"]; ?>';
 
 		// Agregar información al PDF
+		doc.setFont("helvetica");
+		doc.setTextColor(35, 34, 30);
 		doc.setFontSize(12);
+		doc.setFontType("italic");
 		doc.text(20, 30, nickname);
-		doc.text(20, 40, nombre);
-		doc.text(20, 50, apellido1);
-		doc.text(20, 60, apellido2);
-		doc.text(20, 70, telefono);
-		doc.text(20, 80, email);
-		doc.text(20, 90, edad);
+		doc.text(80, 30, nombre);
+		doc.text(20, 40, apellido1);
+		doc.text(80, 40, apellido2);
+		doc.text(20, 50, telefono);
+		doc.text(80, 50, email);
+		doc.text(20, 60, edad);
 
-		doc.save('perfil.pdf');
+		doc.setFont("Playfair Display");
+		doc.setTextColor(223, 147, 186);
+		doc.setFontSize(14);
+		doc.setFontType("bold");
+		doc.text(20, 80, 'Relaciones del Usuario');
+
+		doc.setFont("helvetica");
+
+		doc.setFontSize(12);
+		doc.setFontType("italic");
+		<?php $yPosition = 90; ?>
+		<?php foreach ($relaciones as $relacion): ?>
+		<?php foreach ($pretendientes as $pretendiente): ?>
+		<?php if ($pretendiente['id'] == $relacion['id_pretendiente']): ?>
+
+		var nombrePretendiente = 'Nombre del pretendiente: ' + '<?= $pretendiente['nombre']; ?>';
+		var interes = 'Interes del pretendiente: ' + '<?= $relacion['interes']; ?>';
+		var nivel = 'Nivel de relación: ' + '<?= $relacion['nivel']; ?>';
+
+		doc.setTextColor(27, 190, 215);
+		doc.text(20, <?= $yPosition; ?>, nombrePretendiente);
+		doc.setTextColor(35, 34, 30);
+		doc.text(20, <?= $yPosition + 10; ?>, interes);
+		doc.text(80, <?= $yPosition + 10; ?>, nivel);
+
+		<?php $yPosition += 30; ?>
+
+		<?php endif; ?>
+		<?php endforeach; ?>
+		<?php endforeach; ?>
+
+		// Guardar el PDF
+		doc.save('InformeUsuario.pdf');
 	}
+
 </script>
 
