@@ -23,7 +23,7 @@
 				as $capitulo) :
 				// Busca la imagen correspondiente en datosJson para el capítulo actual
 				$id = $capitulo['id']; ?>
-				<td <?php foreach ($datosJson as $imagen) : if ($capitulo['id'] === $imagen['id']) : ?>
+				<td <?php foreach ($datosJson as $imagen) : if ($capitulo['numero'] === $imagen['id']) : ?>
 					style="background-image: url('<?=$imagen['imagen'];?>');"
 				<?php endif; ?><?php endforeach; ?>>
 					<div>

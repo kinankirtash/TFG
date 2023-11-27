@@ -328,12 +328,380 @@
     "texto": "HAS COMPLETADO EL PRIMER CAPÍTULO"
   },
 
-
   {
     "id": 1,
     "id_capitulo": 2,
     "tipo": "dialogo",
-    "texto": "Un nuevo curso ha comenzado y sabes que este comienzo va a ser más duro... ",
+    "texto": "Han pasado un par de días desde que comenzaron las clases, has ido adaptándote al nuevo centro, lo cual no ha sido muy complicado gracias a Nathan",
     "siguiente_dialogo": 2
+  },
+  {
+    "id": 2,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "Es la hora del descanso, pero la mayoría de gente se queda dentro de clase o por los pasillos",
+    "siguiente_dialogo": 3
+  },
+  {
+    "id": 3,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "texto": "Nathan parece que está adelantando algún trabajo, Kevin se está quedando dormido en su sitio, Mei está absorta mirando por la ventana, además Hanna está apoyada en la puerta de clase, parece que está molestá echando la bronca a alguien con quien ha tropezado en el pasillo",
+    "opciones": [
+      {
+        "id": 3.1,
+        "texto": "Acercarse a Nathan",
+        "siguiente_dialogo": 4
+      },
+      {
+        "id": 3.2,
+        "texto": "Acercarse a Kevin",
+        "siguiente_dialogo": 11
+      },
+      {
+        "id": 3.3,
+        "texto": "Acercarse a Mei",
+        "siguiente_dialogo": 18
+      },
+      {
+        "id": 3.4,
+        "texto": "Acercarse a Hanna",
+        "siguiente_dialogo": 24
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "1",
+    "expresion": "neutra",
+    "texto": "Espera un segundo... No, no me sale, no habrás hecho ya esta parte del trabajo verdad?",
+    "siguiente_dialogo": 5
+  },
+  {
+    "id": 5,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "1",
+    "expresion": "neutra",
+    "texto": "Bueno, da igual, lo volveré a intentar más tarde...",
+    "siguiente_dialogo": 6
+  },
+  {
+    "id": 6,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "id_Pretendiente": "1",
+    "expresion": "feliz",
+    "texto": "Por cierto, viste ayer el capítulo de 'Enemies'???",
+    "opciones": [
+      {
+        "id": 6.1,
+        "texto": "Siiii, buah por fín Raquel se ha librado del mentiroso de Dross",
+        "id_afectado": 1,
+        "reaccion": "buena",
+        "siguiente_dialogo": 7
+      },
+      {
+        "id": 6.2,
+        "texto": "No, la verdad me parece una serie un poco aburrida, repiten el mismo chiste 1000 veces",
+        "id_afectado": 1,
+        "reaccion": "mala",
+        "siguiente_dialogo": 8
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "1",
+    "expresion": "sorprendida",
+    "texto": "Si verdad, te imaginas que acabaran juntos?!? No tendría ningún sentido con todo lo que le ha hecho",
+    "siguiente_dialogo": 9
+  },
+  {
+    "id": 8,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "1",
+    "expresion": "triste",
+    "texto": "Bueno, no sé a mi me resulta entretenida...",
+    "siguiente_dialogo": 9
+  },
+  {
+    "id": 9,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "1",
+    "expresion": "sorprendida",
+    "texto": "*Habláis un rato más pero Nathan termina volviendo a intentar el punto que no le salía*",
+    "siguiente_dialogo": 10
+  },
+  {
+    "id": 10,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "texto": "Kevin se está quedando dormido en su sitio, Mei sigue absorta mirando por la ventana, Hanna se ha marchado ya",
+    "opciones": [
+      {
+        "id": 10.1,
+        "texto": "Acercarse a Kevin",
+        "siguiente_dialogo": 11
+      },
+      {
+        "id": 10.2,
+        "texto": "Acercarse a Mei",
+        "siguiente_dialogo": 18
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "3",
+    "expresion": "triste",
+    "texto": "hmmm... tengo mucho sueño, tener que madrugar para venir a clase debería ser ilegal",
+    "siguiente_dialogo": 12
+  },
+  {
+    "id": 12,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "3",
+    "expresion": "triste",
+    "texto": "Oye... me dejas copiar los deberes es que, mmmm se los ha comido mi pez payaso",
+    "siguiente_dialogo": 13
+  },
+  {
+    "id": 13,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "id_Pretendiente": "3",
+    "expresion": "triste",
+    "texto": "porfiiiiii??",
+    "opciones": [
+      {
+        "id": 13.1,
+        "texto": "Venga vah, pero solo esta vez",
+        "id_afectado": 3,
+        "reaccion": "buena",
+        "siguiente_dialogo": 14
+      },
+      {
+        "id": 13.2,
+        "texto": "Me lo he pensado solo por lo ridícula que es tu excusa, pero paso",
+        "id_afectado": 3,
+        "reaccion": "mala",
+        "siguiente_dialogo": 15
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "3",
+    "expresion": "feliz",
+    "texto": "Gracias, gracias, gracias, te debo un almuerzo",
+    "siguiente_dialogo": 16
+  },
+  {
+    "id": 15,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "3",
+    "expresion": "molesta",
+    "texto": "Bah lo que tu digas... Borde",
+    "siguiente_dialogo": 16
+  },
+  {
+    "id": 16,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "*Kevin se ha puesto ha hacer los deberes*",
+    "siguiente_dialogo": 17
+  },
+  {
+    "id": 17,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "texto": "El resto parecen ocupados y Mei sigue absorta mirando por la ventana",
+    "opciones": [
+      {
+        "id": 17.1,
+        "texto": "Acercarse a Mei",
+        "siguiente_dialogo": 18
+      },
+      {
+        "id": 17.2,
+        "texto": "Dejarla Tranquila",
+        "siguiente_dialogo": 29
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "2",
+    "expresion": "neutra",
+    "texto": "Oh... Hola *Vuelve a mirar la ventana, cuando un pajarito sale volando desde un nido que está en esta*",
+    "siguiente_dialogo": 19
+  },
+  {
+    "id": 19,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "id_Pretendiente": "2",
+    "expresion": "sorprendida",
+    "texto": "Ooooooh por fín lo ha conseguido, Ha sido precioso, a que sí?",
+    "opciones": [
+      {
+        "id": 19.1,
+        "texto": "Sii muy bonito, ¿Era eso lo que mirabas tan atenta?",
+        "id_afectado": 2,
+        "reaccion": "buena",
+        "siguiente_dialogo": 20
+      },
+      {
+        "id": 19.2,
+        "texto": "No sé, sin más, solo es un pájaro",
+        "id_afectado": 2,
+        "reaccion": "mala",
+        "siguiente_dialogo": 23
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "id_Pretendiente": "2",
+    "expresion": "feliz",
+    "texto": "Si llevo varios días observándolo, parece que tenía miedo a volar, aunque eso me ha ayudado a hacer varios dibujos, ¿Quieres verlos?",
+    "opciones": [
+      {
+        "id": 20.1,
+        "texto": "Si claro, me encantaría",
+        "id_afectado": 2,
+        "reaccion": "buena",
+        "siguiente_dialogo": 21
+      },
+      {
+        "id": 20.2,
+        "texto": "Mmmh como quieras",
+        "id_afectado": 2,
+        "reaccion": "mala",
+        "siguiente_dialogo": 22
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "2",
+    "expresion": "feliz",
+    "texto": "*Te enseña sus dibujos y habláis un rato sobre el pequeño pájaro*",
+    "siguiente_dialogo": 29
+  },
+  {
+    "id": 22,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "2",
+    "expresion": "neutra",
+    "texto": "Si no te apetece, puedes decirlo *Vuelve a mirar hacia la ventana y no habla más*",
+    "siguiente_dialogo": 29
+  },
+  {
+    "id": 23,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "2",
+    "expresion": "molesta",
+    "texto": "Eeeeh Okay, lo que tu digas *Rueda los ojos y vuelve a mirar hacia la ventana ignorándote*",
+    "siguiente_dialogo": 29
+  },
+  {
+    "id": 24,
+    "id_capitulo": 2,
+    "tipo": "pregunta",
+    "id_Pretendiente": "4",
+    "expresion": "neutra",
+    "texto": "Ah... Hola, eres tú, por lo visto no eres la única persona que no sabe mirar por donde va *Mira a la persona con la que estaba discutiendo mientras esta se marcha*",
+    "opciones": [
+      {
+        "id": 24.1,
+        "texto": "A lo mejor eres tú quien no mira nunca por donde va",
+        "id_afectado": 4,
+        "reaccion": "mala",
+        "siguiente_dialogo": 25
+      },
+      {
+        "id": 24.2,
+        "texto": "*No decir nada*",
+        "siguiente_dialogo": 27
+      },
+      {
+        "id": 24.2,
+        "texto": "*Asentir*",
+        "id_afectado": 2,
+        "reaccion": "buena",
+        "siguiente_dialogo": 28
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "4",
+    "expresion": "molesta",
+    "texto": "Perdona?!? Y tú quien te has creído para hablarme así",
+    "siguiente_dialogo": 26
+  },
+  {
+    "id": 26,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "4",
+    "expresion": "molesta",
+    "texto": "En fín, cada día viene peor calaña a este instituto *Se marcha indignada*",
+    "siguiente_dialogo": 17
+  },
+  {
+    "id": 27,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "4",
+    "expresion": "neutra",
+    "texto": "Bueno, tengo que marcharme, ya nos veremos renacuajo",
+    "siguiente_dialogo": 17
+  },
+  {
+    "id": 28,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "id_Pretendiente": "4",
+    "expresion": "feliz",
+    "texto": "Jaja, eres dócil, me gustas... Oh S*** me tengo que ir, ya nos veremos",
+    "siguiente_dialogo": 17
+  },
+  {
+    "id": 29,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "*Suena el timbre de la siguiente clase*",
+    "siguiente_dialogo": 30
+  },
+  {
+    "id": 30,
+    "id_capitulo": 2,
+    "tipo": "dialogo",
+    "texto": "HAS COMPLETADO EL SEGUNDO CAPÍTULO"
   }
 ]

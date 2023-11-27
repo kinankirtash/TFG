@@ -10,4 +10,7 @@ VALUES
 INSERT INTO capitulo (titulo, numero)
 VALUES
     ('La Bienvenida', 1),
-    ('Primer encuentro', 2);
+    ('Te lo cuento en la ventana', 2),
+    ("Aire fresco",3),
+    ("Primera conexión",4),
+    ("Una preciosa noche",5);
